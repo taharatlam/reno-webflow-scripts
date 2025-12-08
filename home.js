@@ -297,3 +297,8 @@ function initHeroSliders() {
       }
     });
 }
+function GallerySecAnimation() {
+  console.log("GallerySecAnimation Running...");
+}
+
+GallerySecAnimation();
