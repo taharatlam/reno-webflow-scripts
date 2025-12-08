@@ -298,7 +298,7 @@ function initHeroSliders() {
     });
 }
 function GallerySecAnimation() {
-  console.log("GallerySecAnimation Running 1...");
+  console.log("GallerySecAnimation Running 2...");
   setTimeout(() => {
     if (typeof gsap === "undefined") {
       console.error("GSAP or Flip plugin not loaded properly");
@@ -315,14 +315,15 @@ function GallerySecAnimation() {
     }
 
     const images = gallerySec.querySelectorAll(".gallery-image-wrapper");
+    const imagesIsInitial = gallerySec.querySelectorAll("[isInitial='true']");
     const fText = gallerySec.querySelector(".gallery-t-text-container");
     const sText = gallerySec.querySelector(".gallery-s-text-container");
 
     const galTl = gsap.timeline({
       scrollTrigger: {
         trigger: gallerySec,
-        start: "top 80%",
-        end: "bottom 20%",
+        start: "70% 80%",
+        end: "bottom bottom",
         markers: true,
         scrub: 1,
       },
@@ -331,6 +332,19 @@ function GallerySecAnimation() {
     galTl.set(sText, {
       opacity: 0,
     });
+
+    galTl.fromTo(
+      imagesIsInitial,
+      {
+        opacity: 0,
+        y: 0,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.1,
+      }
+    );
 
     galTl.fromTo(
       images,
