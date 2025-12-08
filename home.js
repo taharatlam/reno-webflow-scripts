@@ -298,7 +298,7 @@ function initHeroSliders() {
     });
 }
 function GallerySecAnimation() {
-  console.log("GallerySecAnimation Running 3...");
+  console.log("GallerySecAnimation Running 4...");
   setTimeout(() => {
     if (typeof gsap === "undefined") {
       console.error("GSAP or Flip plugin not loaded properly");
@@ -322,7 +322,7 @@ function GallerySecAnimation() {
     const galTl = gsap.timeline({
       scrollTrigger: {
         trigger: gallerySec,
-        start: "300px 80%",
+        start: "500px 80%",
         end: "bottom bottom",
         markers: true,
         scrub: 1,
@@ -333,32 +333,20 @@ function GallerySecAnimation() {
       opacity: 0,
       scale: 0.5,
     });
+    galTl.set(images, {
+      opacity: 0,
+    });
 
-    galTl.fromTo(
-      imagesIsInitial,
-      {
-        opacity: 0,
-        y: 0,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        stagger: 0.1,
-      }
-    );
+    galTl.to(imagesIsInitial, {
+      opacity: 1,
+      stagger: 0.1,
+    });
 
-    galTl.fromTo(
-      images,
-      {
-        opacity: 0,
-        y: 0,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        stagger: 0.1,
-      }
-    );
+    galTl.to(images, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.1,
+    });
 
     galTl.to(images[10], {
       scale: 4,
@@ -380,7 +368,7 @@ function GallerySecAnimation() {
       "-=0.5"
     );
     galTl.to(
-      images,
+      images.filter((_, i) => i !== 10),
       {
         opacity: 0,
         ease: "power2.out",
