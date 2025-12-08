@@ -298,7 +298,74 @@ function initHeroSliders() {
     });
 }
 function GallerySecAnimation() {
-  console.log("GallerySecAnimation Running...");
+  console.log("GallerySecAnimation Running 1...");
+  setTimeout(() => {
+    if (typeof gsap === "undefined") {
+      console.error("GSAP or Flip plugin not loaded properly");
+      return;
+    }
+
+    const gallerySec = document.querySelector("[data-image-block-sec]");
+
+    if (!gallerySec) {
+      console.error(
+        "Missing gallery section elements — check your HTML selectors."
+      );
+      return;
+    }
+
+    const images = gallerySec.querySelectorAll(".gallery-image-wrapper");
+    const fText = gallerySec.querySelector(".gallery-t-text-container");
+    const sText = gallerySec.querySelector(".gallery-s-text-container");
+
+    const galTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: gallerySec,
+        start: "top 80%",
+        end: "bottom 20%",
+        markers: true,
+        scrub: 1,
+      },
+    });
+
+    galTl.set(sText, {
+      opacity: 0,
+    });
+
+    galTl.fromTo(
+      images,
+      {
+        opacity: 0,
+        y: 0,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.1,
+      }
+    );
+
+    galTl.to(images[10], {
+      scale: 4,
+      ease: "power2.out",
+    });
+
+    galTl.to(
+      images[10],
+      {
+        opacity: 0,
+        ease: "power2.out",
+      },
+      "-=0.5"
+    );
+
+    galTl.to(fText, {
+      opacity: 0,
+      y: 0,
+      scale: 0.5,
+      ease: "power2.out",
+    });
+  }, 10);
 }
 
 GallerySecAnimation();
