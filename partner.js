@@ -70,6 +70,18 @@ function PartnerTrackAnimation() {
         scrub: 3,
       },
     });
+
+    galTl.to(images, {
+      opacity: 1,
+      duration: 3,
+      ease: "power2.out",
+      y: "50%",
+      x: "50%",
+      stagger: {
+        each: 0.1,
+        from: "random",
+      },
+    });
   }, 10);
 }
 
