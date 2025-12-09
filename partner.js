@@ -51,7 +51,7 @@ function PartnerTrackAnimation() {
 
   const sectionRect = stickySec.getBoundingClientRect();
   const centerX = sectionRect.width / 2;
-  const centerY = sectionRect.height / 2.5;
+  const centerY = sectionRect.height / 1.5;
 
   const tl = gsap.timeline({
     scrollTrigger: {
