@@ -43,47 +43,47 @@ function CareerSecAnimation() {
 CareerSecAnimation();
 
 function PartnerTrackAnimation() {
-  const partnerTrack = document.querySelector("[data-partner-track]");
-  if (!partnerTrack) return;
+  console.log("PartnerTrackAnimation Running 11...");
+  setTimeout(() => {
+    if (typeof gsap === "undefined") {
+      console.error("GSAP or Flip plugin not loaded properly");
+      return;
+    }
 
-  const cards = partnerTrack.querySelectorAll("img.partner-img");
+    const partnerTrack = document.querySelector("[data-partner-track]");
 
-  const sectionRect = partnerTrack.getBoundingClientRect();
-  const centerX = sectionRect.width / 2;
-  const centerY = sectionRect.height / 2;
+    if (!partnerTrack) {
+      console.error(
+        "Missing gallery section elements — check your HTML selectors."
+      );
+      return;
+    }
 
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: partnerTrack,
-      start: "top 80%",
-      end: "center center",
-      scrub: 3,
-      markers: true,
-    },
-  });
+    const images = partnerTrack.querySelectorAll("img.partner-img");
 
-  cards.forEach((img) => {
-    const rect = img.getBoundingClientRect();
+    console.log("images partnber", images);
 
-    // Card center relative to section
-    const imgCenterX = rect.left + rect.width / 2 - sectionRect.left;
-    const imgCenterY = rect.top + rect.height / 2 - sectionRect.top;
-
-    const moveX = centerX - imgCenterX;
-    const moveY = centerY - imgCenterY;
-
-    tl.to(
-      img,
-      {
-        x: moveX,
-        y: moveY,
-        opacity: 1,
-        scale: 1,
-        ease: "power3.out",
+    const galTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: partnerTrack,
+        start: "700px 80%",
+        end: "bottom bottom",
+        markers: true,
+        scrub: 3,
       },
-      0 // ✅ animate all together
-    );
-  });
+    });
+
+    galTl.to(images, {
+      opacity: 1,
+      duration: 3,
+      ease: "power2.out",
+      y: 100,
+      stagger: {
+        each: 0.1,
+        from: "random",
+      },
+    });
+  }, 10);
 }
 
 PartnerTrackAnimation();
