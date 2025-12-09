@@ -1,3 +1,54 @@
+function CareerAccordionAnimation() {
+  document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".v-tabs_accordion_item");
+
+    items.forEach((item) => {
+      const header = item.querySelector(".v-tabs_accordion_header");
+      const body = item.querySelector(".v-tabs_accordion_body");
+
+      // Initial state
+      if (item.classList.contains("is-opened")) {
+        gsap.set(body, { height: "auto" });
+      } else {
+        gsap.set(body, { height: 0 });
+      }
+
+      header.addEventListener("click", () => {
+        const isOpen = item.classList.contains("is-opened");
+
+        // Close all others
+        items.forEach((other) => {
+          if (other !== item) {
+            other.classList.remove("is-opened");
+            gsap.to(other.querySelector(".v-tabs_accordion_body"), {
+              height: 0,
+              duration: 0.4,
+              ease: "power2.inOut",
+            });
+          }
+        });
+
+        // Toggle current
+        if (!isOpen) {
+          item.classList.add("is-opened");
+          gsap.to(body, {
+            height: body.scrollHeight,
+            duration: 0.5,
+            ease: "power2.out",
+          });
+        } else {
+          item.classList.remove("is-opened");
+          gsap.to(body, {
+            height: 0,
+            duration: 0.4,
+            ease: "power2.inOut",
+          });
+        }
+      });
+    });
+  });
+}
+
 function CareerSecAnimation() {
   document.addEventListener("DOMContentLoaded", function () {
     // Small delay to ensure GSAP is fully loaded
@@ -45,3 +96,5 @@ function CareerSecAnimation() {
   });
 }
 CareerSecAnimation();
+
+CareerAccordionAnimation();
