@@ -17,6 +17,8 @@ function CareerSecAnimation() {
 
       const lineHeight = wrapper.offsetHeight;
 
+      console.log("lineHeight", lineHeight);
+
       // Set initial positions
       gsap.set(words, {
         y: lineHeight,
