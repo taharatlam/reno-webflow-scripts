@@ -7,8 +7,6 @@ function CareerSecAnimation() {
         return;
       }
 
-      console.log("career start running 12...");
-
       gsap.registerPlugin(ScrollTrigger);
 
       const wrapper = document.querySelector(".career-revolving-text-wrapper");
