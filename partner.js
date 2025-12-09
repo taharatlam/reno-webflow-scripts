@@ -77,4 +77,4 @@ function PartnerTrackAnimation() {
   }, 10);
 }
 
-GallerySecAnimation();
+PartnerTrackAnimation();
