@@ -56,7 +56,7 @@ function PartnerTrackAnimation() {
 
     const partnerTrack = document.querySelector("[data-partner-track]");
 
-    if (!gallerySec) {
+    if (!partnerTrack) {
       console.error(
         "Missing gallery section elements — check your HTML selectors."
       );
