@@ -298,7 +298,7 @@ function initHeroSliders() {
     });
 }
 function GallerySecAnimation() {
-  console.log("GallerySecAnimation Running 8...");
+  console.log("GallerySecAnimation Running 10...");
   setTimeout(() => {
     if (typeof gsap === "undefined") {
       console.error("GSAP or Flip plugin not loaded properly");
@@ -366,7 +366,6 @@ function GallerySecAnimation() {
 
     galTl.to(images[22], {
       scale: 15,
-      transformOrigin: "bottom right",
       ease: "power2.out",
     });
 
@@ -379,7 +378,7 @@ function GallerySecAnimation() {
       "-=0.5"
     );
     for (let i = 0; i < images.length; i++) {
-      if (i !== 10) {
+      if (i !== 22) {
         galTl.to(
           images[i],
           {
