@@ -2,10 +2,14 @@ function CareerAccordionAnimation() {
   document.addEventListener("DOMContentLoaded", () => {
     const items = document.querySelectorAll(".v-tabs_accordion_item");
 
-    items.forEach((item) => {
+    items.forEach((item, idx) => {
       const header = item.querySelector(".v-tabs_accordion_header");
       const body = item.querySelector(".v-tabs_accordion_body");
 
+      if (idx === 0) {
+        item.classList.add("is-opened");
+        gsap.set(body, { maxHeight: "1000px" });
+      }
       // Initial state
       if (item.classList.contains("is-opened")) {
         gsap.set(body, { maxHeight: "1000px" });
