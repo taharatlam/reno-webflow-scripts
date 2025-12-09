@@ -59,7 +59,9 @@ function PartnerTrackAnimation() {
       return;
     }
 
-    const images = partnerTrack.querySelectorAll(".partner-img");
+    const images = partnerTrack.querySelectorAll("img.partner-img");
+
+    console.log("images partnber", images);
 
     const galTl = gsap.timeline({
       scrollTrigger: {
