@@ -59,7 +59,7 @@ function PartnerTrackAnimation() {
       return;
     }
 
-    const images = partnerTrack.querySelectorAll("[data-partner-img]");
+    const images = partnerTrack.querySelectorAll(".partner-img");
 
     const galTl = gsap.timeline({
       scrollTrigger: {
