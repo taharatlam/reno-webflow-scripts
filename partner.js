@@ -15,8 +15,6 @@ function CareerSecAnimation() {
 
       const lineHeight = wrapper.offsetHeight;
 
-      console.log("lineHeight", lineHeight);
-
       // Set initial positions
       gsap.set(words, {
         y: lineHeight,
@@ -61,7 +59,7 @@ function PartnerTrackAnimation() {
       return;
     }
 
-    const images = gallerySec.querySelectorAll("partner-img");
+    const images = partnerTrack.querySelectorAll("[data-partner-img]");
 
     const galTl = gsap.timeline({
       scrollTrigger: {
