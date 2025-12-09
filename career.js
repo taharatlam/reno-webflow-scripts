@@ -21,7 +21,7 @@ function CareerAccordionAnimation() {
           if (other !== item) {
             other.classList.remove("is-opened");
             gsap.to(other.querySelector(".v-tabs_accordion_body"), {
-              height: 0,
+              maxHeight: 0,
               duration: 0.4,
               ease: "power2.inOut",
             });
@@ -32,14 +32,14 @@ function CareerAccordionAnimation() {
         if (!isOpen) {
           item.classList.add("is-opened");
           gsap.to(body, {
-            height: body.scrollHeight,
+            maxHeight: "1000px",
             duration: 0.5,
             ease: "power2.out",
           });
         } else {
           item.classList.remove("is-opened");
           gsap.to(body, {
-            height: 0,
+            maxHeight: 0,
             duration: 0.4,
             ease: "power2.inOut",
           });
