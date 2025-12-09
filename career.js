@@ -35,7 +35,7 @@ function CareerSecAnimation() {
           ease: "power3.out",
         }).to(word, {
           y: -lineHeight,
-          //   opacity: 0,
+          opacity: 0,
           duration: 0.6,
           ease: "power3.in",
           delay: 1, // visible pause
