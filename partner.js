@@ -56,7 +56,7 @@ function PartnerTrackAnimation() {
     scrollTrigger: {
       trigger: partnerTrack,
       start: "700px 80%",
-      end: "center center",
+      end: "bottom bottom",
       scrub: 3,
       markers: true,
     },
