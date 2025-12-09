@@ -47,8 +47,9 @@ function PartnerTrackAnimation() {
   if (!partnerTrack) return;
 
   const cards = partnerTrack.querySelectorAll("img.partner-img");
+  const stickySec = partnerTrack.querySelector(".partners_sticky ");
 
-  const sectionRect = partnerTrack.getBoundingClientRect();
+  const sectionRect = stickySec.getBoundingClientRect();
   const centerX = sectionRect.width / 2;
   const centerY = sectionRect.height / 2;
 
