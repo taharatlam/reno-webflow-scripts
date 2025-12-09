@@ -49,7 +49,7 @@ function PartnerTrackAnimation() {
   const cards = partnerTrack.querySelectorAll("img.partner-img");
   const stickySec = partnerTrack.querySelector(".partners_sticky ");
   const ghostLogo = partnerTrack.querySelector(".ghost-logo ");
-  const colLogo = partnerTrack.querySelector(".col-logo ");
+  const colLogo = partnerTrack.querySelector(".color-logo ");
 
   const sectionRect = stickySec.getBoundingClientRect();
   const centerX = sectionRect.width / 2;
