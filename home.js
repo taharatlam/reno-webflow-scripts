@@ -298,7 +298,7 @@ function initHeroSliders() {
     });
 }
 function GallerySecAnimation() {
-  console.log("GallerySecAnimation Running 6...");
+  console.log("GallerySecAnimation Running 7...");
   setTimeout(() => {
     if (typeof gsap === "undefined") {
       console.error("GSAP or Flip plugin not loaded properly");
@@ -345,21 +345,21 @@ function GallerySecAnimation() {
       },
     });
 
-    galTl.to(images, {
-      opacity: 1,
-      y: 0,
-      stagger: {
-        each: 0.1,
-        from: "random",
-      },
+    galTl.to(fText, {
+      opacity: 0,
+      scale: 0.5,
+      ease: "power2.out",
     });
 
     galTl.to(
-      fText,
+      images,
       {
-        opacity: 0,
-        scale: 0.5,
-        ease: "power2.out",
+        opacity: 1,
+        y: 0,
+        stagger: {
+          each: 0.1,
+          from: "random",
+        },
       },
       "-=0.5"
     );
@@ -372,7 +372,7 @@ function GallerySecAnimation() {
     galTl.to(
       images[10],
       {
-        opacity: 0.7,
+        opacity: 0.9,
         ease: "power2.out",
       },
       "-=0.5"
@@ -390,6 +390,16 @@ function GallerySecAnimation() {
       }
     }
 
+    galTl.to(sText, {
+      opacity: 1,
+      scale: 1,
+      ease: "power2.out",
+    });
+    galTl.to(sText, {
+      opacity: 1,
+      scale: 1,
+      ease: "power2.out",
+    });
     galTl.to(sText, {
       opacity: 1,
       scale: 1,
