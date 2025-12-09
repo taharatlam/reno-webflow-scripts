@@ -48,6 +48,8 @@ function PartnerTrackAnimation() {
 
   const cards = partnerTrack.querySelectorAll("img.partner-img");
   const stickySec = partnerTrack.querySelector(".partners_sticky ");
+  const ghostLogo = partnerTrack.querySelector(".ghost-logo ");
+  const colLogo = partnerTrack.querySelector(".col-logo ");
 
   const sectionRect = stickySec.getBoundingClientRect();
   const centerX = sectionRect.width / 2;
@@ -85,6 +87,32 @@ function PartnerTrackAnimation() {
       0 // ✅ animate all together
     );
   });
+
+  tl.to(cards, {
+    opacity: 0,
+    duration: 0.5,
+    ease: "power2.out",
+  });
+
+  tl.to(
+    colLogo,
+    {
+      opacity: 1,
+      duration: 3,
+      ease: "power2.out",
+    },
+    "-=0.1"
+  );
+
+  tl.to(
+    ghostLogo,
+    {
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.out",
+    },
+    "-=0.5"
+  );
 }
 
 PartnerTrackAnimation();
