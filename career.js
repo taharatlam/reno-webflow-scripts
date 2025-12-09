@@ -8,9 +8,9 @@ function CareerAccordionAnimation() {
 
       // Initial state
       if (item.classList.contains("is-opened")) {
-        gsap.set(body, { height: "auto" });
+        gsap.set(body, { maxHeight: "1000px" });
       } else {
-        gsap.set(body, { height: 0 });
+        gsap.set(body, { maxHeight: 0 });
       }
 
       header.addEventListener("click", () => {
