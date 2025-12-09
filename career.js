@@ -7,7 +7,7 @@ function CareerSecAnimation() {
         return;
       }
 
-      console.log("career start running 1...");
+      console.log("career start running 12...");
 
       gsap.registerPlugin(ScrollTrigger);
 
