@@ -73,7 +73,7 @@ function PartnerTrackAnimation() {
 
     const moveX = centerX - imgCenterX;
     const moveY = centerY - imgCenterY;
-    if (index >= 0 && index <= 1) {
+    if (index == 0 || index == 1) {
       tl.to(
         img,
         {
@@ -81,6 +81,7 @@ function PartnerTrackAnimation() {
           y: moveY,
           opacity: 1,
           scale: 1,
+          stagger: 0.1,
           ease: "power3.out",
         },
         0
@@ -107,7 +108,7 @@ function PartnerTrackAnimation() {
 
     const moveX = centerX - imgCenterX;
     const moveY = centerY - imgCenterY;
-    if (index >= 2 && index <= 3) {
+    if (index == 2 || index == 3) {
       tl.to(
         img,
         {
@@ -115,6 +116,7 @@ function PartnerTrackAnimation() {
           y: moveY,
           opacity: 1,
           scale: 1,
+          stagger: 0.1,
           ease: "power3.out",
         },
         0
