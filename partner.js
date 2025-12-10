@@ -55,6 +55,25 @@ function PartnerTrackAnimation() {
   const centerX = sectionRect.width / 2;
   const centerY = sectionRect.height / 1.5;
 
+  const getXandY = (img) => {
+    const rect = img.getBoundingClientRect();
+
+    const imgCenterX = rect.left + rect.width / 2 - sectionRect.left;
+    const imgCenterY = rect.top + rect.height / 2 - sectionRect.top;
+
+    return { moveX: centerX - imgCenterX, moveY: centerY - imgCenterY };
+  };
+
+  const CardAnimation = (img) => {
+    return {
+      x: getXandY(img).moveX,
+      y: getXandY(img).moveY,
+      opacity: 1,
+      scale: 1,
+      stagger: 0.1,
+    };
+  };
+
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: partnerTrack,
@@ -65,34 +84,17 @@ function PartnerTrackAnimation() {
     },
   });
 
-  cards.forEach((img, index) => {
-    const rect = img.getBoundingClientRect();
-
-    const imgCenterX = rect.left + rect.width / 2 - sectionRect.left;
-    const imgCenterY = rect.top + rect.height / 2 - sectionRect.top;
-
-    const moveX = centerX - imgCenterX;
-    const moveY = centerY - imgCenterY;
-    if (index == 0 || index == 1) {
-      tl.to(
-        img,
-        {
-          x: moveX,
-          y: moveY,
-          opacity: 1,
-          scale: 1,
-          stagger: 0.1,
-          ease: "power3.out",
-        },
-        0
-      );
-      tl.to(img, {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.out",
-      });
-    }
-  });
+  tl.to(cards[0], CardAnimation(cards[0]), 0);
+  tl.to(
+    cards[0],
+    CardAnimation(cards[0]),
+    {
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.out",
+    },
+    "-=0.2"
+  );
 
   tl.to(colLogo, {
     clipPath: "inset(0% 90% 0% 0%)",
@@ -100,37 +102,92 @@ function PartnerTrackAnimation() {
     ease: "power2.out",
   });
 
-  cards.forEach((img, index) => {
-    const rect = img.getBoundingClientRect();
-
-    const imgCenterX = rect.left + rect.width / 2 - sectionRect.left;
-    const imgCenterY = rect.top + rect.height / 2 - sectionRect.top;
-
-    const moveX = centerX - imgCenterX;
-    const moveY = centerY - imgCenterY;
-    if (index == 2 || index == 3) {
-      tl.to(
-        img,
-        {
-          x: moveX,
-          y: moveY,
-          opacity: 1,
-          scale: 1,
-          stagger: 0.1,
-          ease: "power3.out",
-        },
-        0
-      );
-      tl.to(img, {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.out",
-      });
-    }
-  });
+  tl.to(cards[1], CardAnimation(cards[1]), 0);
+  tl.to(
+    cards[1],
+    CardAnimation(cards[1]),
+    {
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.out",
+    },
+    "-=0.2"
+  );
 
   tl.to(colLogo, {
-    clipPath: "inset(0% 80% 0% 0%)",
+    clipPath: "inset(0% 70% 0% 0%)",
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  tl.to(cards[2], CardAnimation(cards[2]), 0);
+  tl.to(
+    cards[2],
+    CardAnimation(cards[2]),
+    {
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.out",
+    },
+    "-=0.2"
+  );
+
+  tl.to(colLogo, {
+    clipPath: "inset(0% 50% 0% 0%)",
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  tl.to(cards[3], CardAnimation(cards[3]), 0);
+  tl.to(
+    cards[3],
+    CardAnimation(cards[3]),
+    {
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.out",
+    },
+    "-=0.2"
+  );
+
+  tl.to(colLogo, {
+    clipPath: "inset(0% 40% 0% 0%)",
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  tl.to(cards[4], CardAnimation(cards[4]), 0);
+  tl.to(
+    cards[4],
+    CardAnimation(cards[4]),
+    {
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.out",
+    },
+    "-=0.2"
+  );
+
+  tl.to(colLogo, {
+    clipPath: "inset(0% 20% 0% 0%)",
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  tl.to(cards[5], CardAnimation(cards[5]), 0);
+  tl.to(
+    cards[5],
+    CardAnimation(cards[5]),
+    {
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.out",
+    },
+    "-=0.2"
+  );
+
+  tl.to(colLogo, {
+    clipPath: "inset(0% 0% 0% 0%)",
     duration: 1,
     ease: "power2.out",
   });
