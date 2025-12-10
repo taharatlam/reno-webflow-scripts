@@ -65,54 +65,99 @@ function PartnerTrackAnimation() {
     },
   });
 
-  cards.forEach((img) => {
+  cards.forEach((img, index) => {
     const rect = img.getBoundingClientRect();
 
-    // Card center relative to section
     const imgCenterX = rect.left + rect.width / 2 - sectionRect.left;
     const imgCenterY = rect.top + rect.height / 2 - sectionRect.top;
 
     const moveX = centerX - imgCenterX;
     const moveY = centerY - imgCenterY;
-
-    tl.to(
-      img,
-      {
-        x: moveX,
-        y: moveY,
-        opacity: 1,
-        scale: 1,
-        ease: "power3.out",
-      },
-      0 // ✅ animate all together
-    );
+    if (index >= 0 && index <= 1) {
+      tl.to(
+        img,
+        {
+          x: moveX,
+          y: moveY,
+          opacity: 1,
+          scale: 1,
+          ease: "power3.out",
+        },
+        0
+      );
+      tl.to(img, {
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    }
   });
 
-  tl.to(cards, {
-    opacity: 0,
-    duration: 0.5,
+  tl.to(colLogo, {
+    clipPath: "inset(0% 90% 0% 0%)",
+    duration: 1,
     ease: "power2.out",
   });
 
-  tl.to(
-    colLogo,
-    {
-      opacity: 1,
-      duration: 3,
-      ease: "power2.out",
-    },
-    "-=0.1"
-  );
+  cards.forEach((img, index) => {
+    const rect = img.getBoundingClientRect();
 
-  tl.to(
-    ghostLogo,
-    {
-      opacity: 0,
-      duration: 0.5,
-      ease: "power2.out",
-    },
-    "-=0.5"
-  );
+    const imgCenterX = rect.left + rect.width / 2 - sectionRect.left;
+    const imgCenterY = rect.top + rect.height / 2 - sectionRect.top;
+
+    const moveX = centerX - imgCenterX;
+    const moveY = centerY - imgCenterY;
+    if (index >= 2 && index <= 3) {
+      tl.to(
+        img,
+        {
+          x: moveX,
+          y: moveY,
+          opacity: 1,
+          scale: 1,
+          ease: "power3.out",
+        },
+        0
+      );
+      tl.to(img, {
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    }
+  });
+
+  tl.to(colLogo, {
+    clipPath: "inset(0% 80% 0% 0%)",
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  // tl.to(cards, {
+  //   opacity: 0,
+  //   duration: 0.5,
+  //   ease: "power2.out",
+  // });
+
+  // tl.to(
+  //   colLogo,
+  //   {
+  //     opacity: 1,
+  //     duration: 3,
+  //     ease: "power2.out",
+  //   },
+  //   "-=0.1"
+  // );
+
+  // tl.to(
+  //   ghostLogo,
+  //   {
+  //     opacity: 0,
+  //     duration: 0.5,
+  //     ease: "power2.out",
+  //   },
+  //   "-=0.5"
+  // );
 }
 
 PartnerTrackAnimation();
