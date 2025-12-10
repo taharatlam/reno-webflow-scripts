@@ -84,7 +84,7 @@ function PartnerTrackAnimation() {
     },
   });
 
-  tl.to(cards[0], CardAnimation(cards[0]), 0);
+  tl.to(cards[0], CardAnimation(cards[0]));
   tl.to(
     cards[0],
     CardAnimation(cards[0]),
@@ -102,7 +102,7 @@ function PartnerTrackAnimation() {
     ease: "power2.out",
   });
 
-  tl.to(cards[1], CardAnimation(cards[1]), 0);
+  tl.to(cards[1], CardAnimation(cards[1]));
   tl.to(
     cards[1],
     CardAnimation(cards[1]),
@@ -120,7 +120,7 @@ function PartnerTrackAnimation() {
     ease: "power2.out",
   });
 
-  tl.to(cards[2], CardAnimation(cards[2]), 0);
+  tl.to(cards[2], CardAnimation(cards[2]));
   tl.to(
     cards[2],
     CardAnimation(cards[2]),
@@ -138,7 +138,7 @@ function PartnerTrackAnimation() {
     ease: "power2.out",
   });
 
-  tl.to(cards[3], CardAnimation(cards[3]), 0);
+  tl.to(cards[3], CardAnimation(cards[3]));
   tl.to(
     cards[3],
     CardAnimation(cards[3]),
@@ -156,7 +156,7 @@ function PartnerTrackAnimation() {
     ease: "power2.out",
   });
 
-  tl.to(cards[4], CardAnimation(cards[4]), 0);
+  tl.to(cards[4], CardAnimation(cards[4]));
   tl.to(
     cards[4],
     CardAnimation(cards[4]),
@@ -174,7 +174,7 @@ function PartnerTrackAnimation() {
     ease: "power2.out",
   });
 
-  tl.to(cards[5], CardAnimation(cards[5]), 0);
+  tl.to(cards[5], CardAnimation(cards[5]));
   tl.to(
     cards[5],
     CardAnimation(cards[5]),
