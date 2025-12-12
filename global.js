@@ -634,19 +634,19 @@ document.addEventListener("DOMContentLoaded", function () {
 //   });
 // });
 
-gsap.fromTo(
-  ".partners_bg",
-  { opacity: 0 },
-  {
-    opacity: 1,
-    scrollTrigger: {
-      trigger: ".partners_track",
-      start: "top top",
-      end: "10% top",
-      scrub: true,
-    },
-  }
-);
+// gsap.fromTo(
+//   ".partners_bg",
+//   { opacity: 0 },
+//   {
+//     opacity: 1,
+//     scrollTrigger: {
+//       trigger: ".partners_track",
+//       start: "top top",
+//       end: "10% top",
+//       scrub: true,
+//     },
+//   }
+// );
 
 document.addEventListener("DOMContentLoaded", () => {
   const inputField = document.querySelector('[data-instalment-price="total"]');
