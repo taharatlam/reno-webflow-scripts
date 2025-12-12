@@ -76,7 +76,7 @@ function PartnerTrackAnimation() {
         y: getXandY(img).moveY,
         opacity: 1,
         scale: 1,
-        stagger: 0.1,
+        duration: 2,
       };
     };
 
@@ -104,7 +104,7 @@ function PartnerTrackAnimation() {
         cards[cardIndex],
         {
           opacity: 0,
-          duration: 3,
+          duration: 0.5,
           ease: "power2.out",
         },
         "-=0.2"
@@ -123,10 +123,10 @@ function PartnerTrackAnimation() {
 
     timelineRender(4, 80);
     timelineRender(2, 60);
-    timelineRender(3, 70);
-    timelineRender(1, 50);
-    timelineRender(0, 30);
-    timelineRender(5, 0);
+    timelineRender(3, 50);
+    timelineRender(1, 40);
+    timelineRender(5, 30);
+    timelineRender(0, 0);
   }, 10);
 }
 PartnerTrackAnimation();
