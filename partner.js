@@ -157,7 +157,7 @@ function pCarouselSwiper() {
     breakpoints: {
       0: {
         slidesPerView: 1,
-        spaceBetween: 24,
+        spaceBetween: 10,
       },
       640: {
         slidesPerView: 2,
@@ -165,7 +165,7 @@ function pCarouselSwiper() {
       },
       1024: {
         slidesPerView: 2.7,
-        spaceBetween: 32,
+        spaceBetween: 0,
       },
     },
   });
