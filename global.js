@@ -590,51 +590,49 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const images = document.querySelectorAll(
-    '[data-paralax-img="1"], [data-paralax-img="2"], [data-paralax-img="3"], [data-paralax-img="4"], [data-paralax-img="5"]'
-  );
+// document.addEventListener("DOMContentLoaded", () => {
+//   const images = document.querySelectorAll(
+//     '[data-paralax-img="1"], [data-paralax-img="2"], [data-paralax-img="3"], [data-paralax-img="4"], [data-paralax-img="5"]'
+//   );
 
-  const zStart = -200; // starting z in dvh
-  const zEndBase = 300; // base zEnd in dvh
-  const zOffset = 10; // z offset step in dvh
-  const fadeRange = 10; // how many % of viewport to fade in
+//   const zStart = -200;
+//   const zEndBase = 300;
+//   const zOffset = 10;
+//   const fadeRange = 10;
 
-  images.forEach((img, i) => {
-    const startTop = parseFloat(img.dataset.gsapStartTop) || 0; // read [data-gsap-start-top]
-    const zEnd = zEndBase + i * zOffset;
+//   images.forEach((img, i) => {
+//     const startTop = parseFloat(img.dataset.gsapStartTop) || 0;
+//     const zEnd = zEndBase + i * zOffset;
 
-    // Z animation
-    gsap.fromTo(
-      img,
-      { z: `${zStart}dvh` },
-      {
-        z: `${zEnd}dvh`,
-        scrollTrigger: {
-          trigger: ".partners_track",
-          start: `${startTop}% top`,
-          end: "bottom bottom",
-          scrub: true,
-        },
-      }
-    );
+//     gsap.fromTo(
+//       img,
+//       { z: `${zStart}dvh` },
+//       {
+//         z: `${zEnd}dvh`,
+//         scrollTrigger: {
+//           trigger: ".partners_track",
+//           start: `${startTop}% top`,
+//           end: "bottom bottom",
+//           scrub: true,
+//         },
+//       }
+//     );
 
-    // Opacity animation (gradual)
-    gsap.fromTo(
-      img,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: ".partners_track",
-          start: `${startTop}% top`,
-          end: `${startTop + fadeRange}% top`,
-          scrub: true,
-        },
-      }
-    );
-  });
-});
+//     gsap.fromTo(
+//       img,
+//       { opacity: 0 },
+//       {
+//         opacity: 1,
+//         scrollTrigger: {
+//           trigger: ".partners_track",
+//           start: `${startTop}% top`,
+//           end: `${startTop + fadeRange}% top`,
+//           scrub: true,
+//         },
+//       }
+//     );
+//   });
+// });
 
 gsap.fromTo(
   ".partners_bg",
