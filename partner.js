@@ -107,96 +107,6 @@ function PartnerTrackAnimation() {
       duration: 1,
       ease: "power2.out",
     });
-
-    tl.to(cards[1], CardAnimation(cards[1]));
-    tl.to(
-      cards[1],
-      CardAnimation(cards[1]),
-      {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.out",
-      },
-      "-=0.2"
-    );
-
-    tl.to(colLogo, {
-      clipPath: "inset(0% 70% 0% 0%)",
-      duration: 1,
-      ease: "power2.out",
-    });
-
-    tl.to(cards[2], CardAnimation(cards[2]));
-    tl.to(
-      cards[2],
-      CardAnimation(cards[2]),
-      {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.out",
-      },
-      "-=0.2"
-    );
-
-    tl.to(colLogo, {
-      clipPath: "inset(0% 50% 0% 0%)",
-      duration: 1,
-      ease: "power2.out",
-    });
-
-    tl.to(cards[3], CardAnimation(cards[3]));
-    tl.to(
-      cards[3],
-      CardAnimation(cards[3]),
-      {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.out",
-      },
-      "-=0.2"
-    );
-
-    tl.to(colLogo, {
-      clipPath: "inset(0% 40% 0% 0%)",
-      duration: 1,
-      ease: "power2.out",
-    });
-
-    tl.to(cards[4], CardAnimation(cards[4]));
-    tl.to(
-      cards[4],
-      CardAnimation(cards[4]),
-      {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.out",
-      },
-      "-=0.2"
-    );
-
-    tl.to(colLogo, {
-      clipPath: "inset(0% 20% 0% 0%)",
-      duration: 1,
-      ease: "power2.out",
-    });
-
-    tl.to(cards[5], CardAnimation(cards[5]));
-    tl.to(
-      cards[5],
-      CardAnimation(cards[5]),
-      {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.out",
-      },
-      "-=0.2"
-    );
-
-    tl.to(colLogo, {
-      clipPath: "inset(0% 0% 0% 0%)",
-      duration: 1,
-      ease: "power2.out",
-    });
   }, 10);
 }
 PartnerTrackAnimation();
@@ -235,4 +145,4 @@ function pCarouselSwiper() {
 }
 pCarouselSwiper();
 
-console.log("running 1");
+console.log("running 2");
