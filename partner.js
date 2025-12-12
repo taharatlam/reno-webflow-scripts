@@ -90,6 +90,14 @@ function PartnerTrackAnimation() {
       },
     });
 
+    const emptyTimeline = () => {
+      tl.to(colLogo, {
+        opacity: 1,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    };
+
     const timelineRender = (cardIndex, prcnt) => {
       tl.to(cards[cardIndex], CardAnimation(cards[cardIndex]));
       tl.to(
@@ -99,7 +107,7 @@ function PartnerTrackAnimation() {
           duration: 0.5,
           ease: "power2.out",
         },
-        "-=0.6"
+        "-=0.2"
       );
 
       tl.to(
@@ -109,7 +117,7 @@ function PartnerTrackAnimation() {
           duration: 1,
           ease: "power2.out",
         },
-        "-=0.4"
+        "-=0.2"
       );
     };
 
@@ -119,6 +127,10 @@ function PartnerTrackAnimation() {
     timelineRender(3, 50);
     timelineRender(4, 30);
     timelineRender(5, 0);
+
+    emptyTimeline();
+    emptyTimeline();
+    emptyTimeline();
   }, 10);
 }
 PartnerTrackAnimation();
