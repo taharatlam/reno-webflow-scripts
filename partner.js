@@ -104,7 +104,7 @@ function PartnerTrackAnimation() {
         cards[cardIndex],
         {
           opacity: 0,
-          duration: 0.5,
+          duration: 3,
           ease: "power2.out",
         },
         "-=0.2"
@@ -121,18 +121,12 @@ function PartnerTrackAnimation() {
       );
     };
 
-    timelineRender(0, 90);
-    timelineRender(1, 80);
-    timelineRender(2, 70);
-    timelineRender(3, 50);
-    timelineRender(4, 30);
+    timelineRender(4, 80);
+    timelineRender(2, 60);
+    timelineRender(3, 70);
+    timelineRender(1, 50);
+    timelineRender(0, 30);
     timelineRender(5, 0);
-
-    emptyTimeline();
-    emptyTimeline();
-    emptyTimeline();
-    emptyTimeline();
-    emptyTimeline();
   }, 10);
 }
 PartnerTrackAnimation();
