@@ -233,4 +233,6 @@ function pCarouselSwiper() {
     },
   });
 }
-pCarousdel();
+pCarouselSwiper();
+
+console.log("running 1");
