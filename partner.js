@@ -164,7 +164,7 @@ function pCarouselSwiper() {
         spaceBetween: 24,
       },
       1024: {
-        slidesPerView: 2.5,
+        slidesPerView: 2.7,
         spaceBetween: 32,
       },
     },
