@@ -144,6 +144,7 @@ function pCarouselSwiper() {
   const swiper = new Swiper(slider, {
     slidesPerView: 1,
     spaceBetween: 16,
+    centeredSlides: true,
     loop: true,
     navigation: {
       nextEl: slider.querySelector(".swiper-button-next"),
