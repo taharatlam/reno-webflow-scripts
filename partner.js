@@ -99,18 +99,26 @@ function PartnerTrackAnimation() {
           duration: 0.5,
           ease: "power2.out",
         },
-        "-=0.2"
+        "-=0.6"
       );
 
-      tl.to(colLogo, {
-        clipPath: `inset(0% ${prcnt}% 0% 0%)`,
-        duration: 1,
-        ease: "power2.out",
-      });
+      tl.to(
+        colLogo,
+        {
+          clipPath: `inset(0% ${prcnt}% 0% 0%)`,
+          duration: 1,
+          ease: "power2.out",
+        },
+        "-=0.4"
+      );
     };
 
     timelineRender(0, 90);
     timelineRender(1, 80);
+    timelineRender(2, 70);
+    timelineRender(3, 50);
+    timelineRender(4, 30);
+    timelineRender(5, 0);
   }, 10);
 }
 PartnerTrackAnimation();
