@@ -131,6 +131,8 @@ function PartnerTrackAnimation() {
     emptyTimeline();
     emptyTimeline();
     emptyTimeline();
+    emptyTimeline();
+    emptyTimeline();
   }, 10);
 }
 PartnerTrackAnimation();
