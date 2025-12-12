@@ -90,23 +90,27 @@ function PartnerTrackAnimation() {
       },
     });
 
-    tl.to(cards[0], CardAnimation(cards[0]));
-    tl.to(
-      cards[0],
-      CardAnimation(cards[0]),
-      {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.out",
-      },
-      "-=0.2"
-    );
+    const timelineRender = (cardIndex, prcnt) => {
+      tl.to(cards[cardIndex], CardAnimation(cards[cardIndex]));
+      tl.to(
+        cards[cardIndex],
+        {
+          opacity: 0,
+          duration: 0.5,
+          ease: "power2.out",
+        },
+        "-=0.2"
+      );
 
-    tl.to(colLogo, {
-      clipPath: "inset(0% 90% 0% 0%)",
-      duration: 1,
-      ease: "power2.out",
-    });
+      tl.to(colLogo, {
+        clipPath: `inset(0% ${prcnt}% 0% 0%)`,
+        duration: 1,
+        ease: "power2.out",
+      });
+    };
+
+    timelineRender(0, 90);
+    timelineRender(1, 80);
   }, 10);
 }
 PartnerTrackAnimation();
@@ -145,4 +149,4 @@ function pCarouselSwiper() {
 }
 pCarouselSwiper();
 
-console.log("running 2");
+console.log("running 3");
