@@ -410,3 +410,41 @@ function GallerySecAnimation() {
 }
 
 GallerySecAnimation();
+
+function designerSlider() {
+  const designerMainSlider = document.querySelector("[designer-main-slider]");
+
+  const designerPaginationSlider = document.querySelector(
+    "[designer-pagination-slider]"
+  );
+
+  const designerPaginationSliderConfig = new Swiper(designerPaginationSlider, {
+    direction: "vertical",
+    slidesPerView: 4,
+    spaceBetween: 10,
+    watchSlidesProgress: true,
+    watchSlidesVisibility: true,
+    grabCursor: true,
+    resistanceRatio: 0.65,
+    touchRatio: 0.7,
+    touchStartPreventDefault: false,
+    touchMoveStopPropagation: false,
+    touchStartPreventDefault: false,
+  });
+
+  const designerMainSliderConfig = new Swiper(designerMainSlider, {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    thumbs: {
+      swiper: designerPaginationSliderConfig,
+    },
+  });
+}
+designerSlider();
+
+console.log("designerSlider Running 11...");
