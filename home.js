@@ -425,12 +425,7 @@ function designerSlider() {
     spaceBetween: 20,
     watchSlidesProgress: true,
     watchSlidesVisibility: true,
-    // grabCursor: true,
-    // resistanceRatio: 0.65,
-    // touchRatio: 0.7,
-    // touchStartPreventDefault: false,
-    // touchMoveStopPropagation: false,
-    // touchStartPreventDefault: false,
+    slideToClickedSlide: true, // allow clicking to center slide
   });
 
   const designerMainSliderConfig = new Swiper(designerMainSlider, {
