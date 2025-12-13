@@ -420,8 +420,9 @@ function designerSlider() {
 
   const designerPaginationSliderConfig = new Swiper(designerPaginationSlider, {
     direction: "vertical",
-    slidesPerView: 4,
-    spaceBetween: 10,
+    slidesPerView: 3.5,
+    centeredSlides: true,
+    spaceBetween: 20,
     watchSlidesProgress: true,
     watchSlidesVisibility: true,
     // grabCursor: true,
