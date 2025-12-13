@@ -436,6 +436,7 @@ function designerSlider() {
   const designerMainSliderConfig = new Swiper(designerMainSlider, {
     slidesPerView: 1,
     spaceBetween: 10,
+    fadeEffect: { crossFade: true },
     loop: true,
     autoplay: {
       delay: 3000,
