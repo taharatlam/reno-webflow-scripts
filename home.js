@@ -428,12 +428,6 @@ function designerSlider() {
     slideToClickedSlide: true, // allow clicking to center slide
   });
 
-  designerPaginationSlider.on("click", (swiper) => {
-    if (swiper.clickedIndex !== undefined) {
-      swiper.slideTo(swiper.clickedIndex);
-    }
-  });
-
   const designerMainSliderConfig = new Swiper(designerMainSlider, {
     slidesPerView: 1,
     spaceBetween: 10,
