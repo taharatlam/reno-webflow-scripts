@@ -431,15 +431,13 @@ function designerSlider() {
     spaceBetween: 10,
     effect: "fade",
     fadeEffect: { crossFade: true },
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false,
+    // },
     thumbs: {
       swiper: designerPaginationSliderConfig,
     },
-
-    // 🔑 KEY PART
     on: {
       slideChange: function () {
         designerPaginationSliderConfig.slideTo(this.activeIndex);
@@ -447,7 +445,6 @@ function designerSlider() {
     },
   });
 
-  // 🔑 Thumb click → center thumb
   designerPaginationSliderConfig.on("click", function () {
     if (this.clickedIndex !== undefined) {
       this.slideTo(this.clickedIndex);
@@ -457,4 +454,4 @@ function designerSlider() {
 
 designerSlider();
 
-console.log("designerSlider Running 22...");
+console.log("designerSlider Running 223...");
