@@ -433,7 +433,6 @@ function designerSlider() {
     spaceBetween: 10,
     effect: "fade",
     fadeEffect: { crossFade: true },
-    loop: true,
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,
