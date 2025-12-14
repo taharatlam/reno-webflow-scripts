@@ -413,7 +413,6 @@ GallerySecAnimation();
 
 function designerSlider() {
   const designerMainSlider = document.querySelector("[designer-main-slider]");
-
   const designerPaginationSlider = document.querySelector(
     "[designer-pagination-slider]"
   );
@@ -424,8 +423,7 @@ function designerSlider() {
     centeredSlides: true,
     spaceBetween: 20,
     watchSlidesProgress: true,
-    watchSlidesVisibility: true,
-    slideToClickedSlide: true, // allow clicking to center slide
+    slideToClickedSlide: true,
   });
 
   const designerMainSliderConfig = new Swiper(designerMainSlider, {
@@ -440,8 +438,23 @@ function designerSlider() {
     thumbs: {
       swiper: designerPaginationSliderConfig,
     },
+
+    // 🔑 KEY PART
+    on: {
+      slideChange: function () {
+        designerPaginationSliderConfig.slideTo(this.activeIndex);
+      },
+    },
+  });
+
+  // 🔑 Thumb click → center thumb
+  designerPaginationSliderConfig.on("click", function () {
+    if (this.clickedIndex !== undefined) {
+      this.slideTo(this.clickedIndex);
+    }
   });
 }
+
 designerSlider();
 
-console.log("designerSlider Running 11...");
+console.log("designerSlider Running 22...");
