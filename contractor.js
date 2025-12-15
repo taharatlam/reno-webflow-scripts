@@ -317,3 +317,28 @@ function counterAnimation() {
 }
 
 counterAnimation();
+
+function browseContractorSwiper() {
+  console.log("browseContractorSwiper running...");
+
+  const swiper = new Swiper("[browse-contractors-swiper]", {
+    slidesPerView: "auto",
+    spaceBetween: 32, // adjust as needed
+    loop: true,
+    centeredSlides: false,
+    grabCursor: false,
+
+    // 🔥 marquee essentials
+    freeMode: true,
+    freeModeMomentum: false,
+
+    autoplay: {
+      delay: 0, // no pause
+      disableOnInteraction: false,
+    },
+
+    speed: 6000, // higher = slower movement (very important)
+  });
+}
+
+browseContractorSwiper();
