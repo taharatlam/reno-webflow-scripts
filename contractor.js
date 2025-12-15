@@ -288,39 +288,34 @@ function counterAnimation() {
     counters.forEach((el) => {
       // get target number from data attribute or fallback to parseInt of current
       let target = el.getAttribute("data-target");
-      console.log("target", target);
       if (!target) {
         // fallback: extract digits (ignore commas, + etc), or fallback 1000
         target = el.textContent.replace(/[^\d.]/g, "") || "1000";
       }
       target = parseFloat(target);
 
-      console.log("target el", el.textContent);
-
       // start value (could be 0 or what's in the html)
       let startVal = parseFloat(el.textContent.replace(/[^\d.]/g, "")) || 0;
 
-      gsap.fromTo(
-        el,
-        { val: startVal },
-        {
-          val: target,
-          duration: 2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: counterSection,
-            start: "700px 80%",
-            end: "bottom bottom",
-            scrub: 2,
-            markers: false,
-          },
-          onUpdate: function () {
-            // format with thousand separator if needed
-            let v = Math.round(this.targets()[0].val);
-            el.textContent = v.toLocaleString();
-          },
-        }
-      );
+      // Use a plain object to animate number since GSAP does not animate non-style object properties without a plugin
+      let counterObj = { value: startVal };
+
+      gsap.to(counterObj, {
+        value: target,
+        duration: 2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: counterSection,
+          start: "700px 80%",
+          end: "bottom bottom",
+          scrub: 2,
+          markers: false,
+        },
+        onUpdate: function () {
+          let v = Math.round(counterObj.value);
+          el.textContent = v.toLocaleString();
+        },
+      });
     });
   }, 10);
 }
