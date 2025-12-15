@@ -184,6 +184,7 @@ const init = () => {
 };
 
 function PartnerTrackAnimation() {
+  console.log("PartnerTrackAnimation start running 12...");
   setTimeout(() => {
     if (typeof gsap === "undefined") {
       console.error("GSAP or Flip plugin not loaded properly");
