@@ -322,7 +322,7 @@ function browseContractorSwiper() {
   console.log("browseContractorSwiper running...");
 
   const swiper = new Swiper("[browse-contractors-swiper]", {
-    slidesPerView: "auto",
+    slidesPerView: 4.5,
     spaceBetween: 32, // adjust as needed
     loop: true,
     centeredSlides: false,
@@ -338,6 +338,17 @@ function browseContractorSwiper() {
     },
 
     speed: 6000, // higher = slower movement (very important)
+
+    breakpoints: {
+      0: {
+        slidesPerView: 1.2,
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 4.5,
+        spaceBetween: 32,
+      },
+    },
   });
 }
 
