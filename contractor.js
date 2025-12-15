@@ -352,4 +352,4 @@ function browseContractorSwiper() {
   });
 }
 
-browseContractorSwiper();
+// browseContractorSwiper();
