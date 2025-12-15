@@ -342,39 +342,3 @@ counterAnimation();
 // }
 
 // browseContractorSwiper();
-
-function pCarouselSwiper() {
-  console.log("pCarouselSwiper running...");
-  const slider = document.querySelector("[data-portfolio-slider]");
-  if (!slider) return;
-
-  const swiper = new Swiper(slider, {
-    slidesPerView: 1,
-    spaceBetween: 16,
-    centeredSlides: true,
-    loop: true,
-    navigation: {
-      nextEl: slider.querySelector(".swiper-button-next"),
-      prevEl: slider.querySelector(".swiper-button-prev"),
-    },
-    pagination: {
-      el: slider.querySelector(".swiper-pagination"),
-      clickable: true,
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-        spaceBetween: 10,
-      },
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 24,
-      },
-      1024: {
-        slidesPerView: 2.7,
-        spaceBetween: 0,
-      },
-    },
-  });
-}
-pCarouselSwiper();
