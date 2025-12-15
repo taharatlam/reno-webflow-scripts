@@ -305,7 +305,7 @@ function counterAnimation() {
       ease: "power2.out",
       scrollTrigger: {
         trigger: counterSection,
-        start: "top 80%",
+        start: "top 40%",
         once: true, // 🔥 important: animate only once
         markers: true, // remove in production
       },
