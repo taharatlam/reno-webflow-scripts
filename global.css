@@ -1,0 +1,19 @@
+[data-portfolio-orientation=horizontal] .p-carousal_marquee_list {
+    animation: loopi 5s infinite linear;
+}
+
+.p-carousal_slide:not(.swiper-slide-active) {
+    transform: scale(0.7) !important;
+}
+
+.p-carousal_slide {
+    transition: 0.3s ease-in-out;
+}
+@keyframes loopi{
+    0%{
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(-50%)
+    }
+}
