@@ -288,11 +288,14 @@ function counterAnimation() {
     counters.forEach((el) => {
       // get target number from data attribute or fallback to parseInt of current
       let target = el.getAttribute("data-target");
+      console.log("target", target);
       if (!target) {
         // fallback: extract digits (ignore commas, + etc), or fallback 1000
         target = el.textContent.replace(/[^\d.]/g, "") || "1000";
       }
       target = parseFloat(target);
+
+      console.log("target el", el.textContent);
 
       // start value (could be 0 or what's in the html)
       let startVal = parseFloat(el.textContent.replace(/[^\d.]/g, "")) || 0;
