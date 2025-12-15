@@ -325,19 +325,19 @@ function browseContractorSwiper() {
     slidesPerView: 4.5,
     spaceBetween: 32, // adjust as needed
     loop: true,
-    centeredSlides: false,
+    centeredSlides: true,
     grabCursor: false,
 
     // 🔥 marquee essentials
-    freeMode: true,
-    freeModeMomentum: false,
+    // freeMode: true,
+    // freeModeMomentum: false,
 
-    autoplay: {
-      delay: 0, // no pause
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 0,
+    //   disableOnInteraction: false,
+    // },
 
-    speed: 6000, // higher = slower movement (very important)
+    // speed: 6000,
 
     breakpoints: {
       0: {
