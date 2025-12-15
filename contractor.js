@@ -306,10 +306,10 @@ function counterAnimation() {
         ease: "power2.out",
         scrollTrigger: {
           trigger: counterSection,
-          start: "700px 80%",
+          start: "top 80%",
           end: "bottom bottom",
           scrub: 2,
-          markers: false,
+          markers: true,
         },
         onUpdate: function () {
           let v = Math.round(counterObj.value);
