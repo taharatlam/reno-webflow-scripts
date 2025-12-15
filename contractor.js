@@ -274,49 +274,46 @@ function PartnerTrackAnimation() {
 PartnerTrackAnimation();
 
 function counterAnimation() {
-  setTimeout(() => {
-    if (typeof gsap === "undefined") {
-      console.error("GSAP or Flip plugin not loaded properly");
-      return;
-    }
+  if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
+    console.error("GSAP or ScrollTrigger not loaded");
+    return;
+  }
 
-    const counterSection = document.querySelector(".ctr_stats_section");
-    if (!counterSection) return;
+  const counterSection = document.querySelector(".ctr_stats_section");
+  if (!counterSection) return;
 
-    // Loop through all counters to animate each separately
-    const counters = counterSection.querySelectorAll(".counter-text");
-    counters.forEach((el) => {
-      // get target number from data attribute or fallback to parseInt of current
-      let target = el.getAttribute("data-target");
-      if (!target) {
-        // fallback: extract digits (ignore commas, + etc), or fallback 1000
-        target = el.textContent.replace(/[^\d.]/g, "") || "1000";
-      }
-      target = parseFloat(target);
+  const counters = counterSection.querySelectorAll(".counter-text");
 
-      // start value (could be 0 or what's in the html)
-      let startVal = parseFloat(el.textContent.replace(/[^\d.]/g, "")) || 0;
+  counters.forEach((el) => {
+    // Target value
+    let target =
+      el.getAttribute("data-target") ||
+      el.textContent.replace(/[^\d]/g, "") ||
+      "1000";
 
-      // Use a plain object to animate number since GSAP does not animate non-style object properties without a plugin
-      let counterObj = { value: startVal };
+    target = parseInt(target, 10);
 
-      gsap.to(counterObj, {
-        value: target,
-        duration: 2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: counterSection,
-          start: "top 80%",
-          end: "bottom bottom",
-          scrub: 2,
-          markers: true,
-        },
-        onUpdate: function () {
-          let v = Math.round(counterObj.value);
-          el.textContent = v.toLocaleString();
-        },
-      });
+    // Start value
+    let startVal = 0;
+    el.textContent = startVal.toLocaleString();
+
+    let counterObj = { value: startVal };
+
+    gsap.to(counterObj, {
+      value: target,
+      duration: 2,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: counterSection,
+        start: "top 80%",
+        once: true, // 🔥 important: animate only once
+        markers: true, // remove in production
+      },
+      onUpdate() {
+        el.textContent = Math.floor(counterObj.value).toLocaleString();
+      },
     });
-  }, 10);
+  });
 }
+
 counterAnimation();
