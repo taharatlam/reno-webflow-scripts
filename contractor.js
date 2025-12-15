@@ -318,38 +318,27 @@ function counterAnimation() {
 
 counterAnimation();
 
-function browseContractorSwiper() {
-  console.log("browseContractorSwiper running...");
+// function browseContractorSwiper() {
+//   console.log("browseContractorSwiper running...");
 
-  const swiper = new Swiper("[browse-contractors-swiper]", {
-    slidesPerView: 4.5,
-    spaceBetween: 32, // adjust as needed
-    loop: true,
-    centeredSlides: true,
-    grabCursor: false,
+//   const swiper = new Swiper("[browse-contractors-swiper]", {
+//     slidesPerView: 4.5,
+//     spaceBetween: 32,
+//     loop: true,
+//     centeredSlides: true,
+//     grabCursor: false,
 
-    // 🔥 marquee essentials
-    // freeMode: true,
-    // freeModeMomentum: false,
+//     breakpoints: {
+//       0: {
+//         slidesPerView: 1.2,
+//         spaceBetween: 10,
+//       },
+//       768: {
+//         slidesPerView: 4.5,
+//         spaceBetween: 32,
+//       },
+//     },
+//   });
+// }
 
-    // autoplay: {
-    //   delay: 0,
-    //   disableOnInteraction: false,
-    // },
-
-    // speed: 6000,
-
-    breakpoints: {
-      0: {
-        slidesPerView: 1.2,
-        spaceBetween: 10,
-      },
-      768: {
-        slidesPerView: 4.5,
-        spaceBetween: 32,
-      },
-    },
-  });
-}
-
-browseContractorSwiper();
+// browseContractorSwiper();
