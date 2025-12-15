@@ -228,7 +228,7 @@ function PartnerTrackAnimation() {
         start: "700px 80%",
         end: "bottom bottom",
         scrub: 2,
-        markers: true,
+        markers: false,
       },
     });
 
@@ -272,3 +272,53 @@ function PartnerTrackAnimation() {
   }, 10);
 }
 PartnerTrackAnimation();
+
+function counterAnimation() {
+  setTimeout(() => {
+    if (typeof gsap === "undefined") {
+      console.error("GSAP or Flip plugin not loaded properly");
+      return;
+    }
+
+    const counterSection = document.querySelector(".ctr_stats_section");
+    if (!counterSection) return;
+
+    // Loop through all counters to animate each separately
+    const counters = counterSection.querySelectorAll(".counter-text");
+    counters.forEach((el) => {
+      // get target number from data attribute or fallback to parseInt of current
+      let target = el.getAttribute("data-target");
+      if (!target) {
+        // fallback: extract digits (ignore commas, + etc), or fallback 1000
+        target = el.textContent.replace(/[^\d.]/g, "") || "1000";
+      }
+      target = parseFloat(target);
+
+      // start value (could be 0 or what's in the html)
+      let startVal = parseFloat(el.textContent.replace(/[^\d.]/g, "")) || 0;
+
+      gsap.fromTo(
+        el,
+        { val: startVal },
+        {
+          val: target,
+          duration: 2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: counterSection,
+            start: "700px 80%",
+            end: "bottom bottom",
+            scrub: 2,
+            markers: false,
+          },
+          onUpdate: function () {
+            // format with thousand separator if needed
+            let v = Math.round(this.targets()[0].val);
+            el.textContent = v.toLocaleString();
+          },
+        }
+      );
+    });
+  }, 10);
+}
+counterAnimation();
