@@ -57,8 +57,9 @@ $(document).ready(function () {
 });
 
 console.log("modal", MicroModal);
+console.log("modal btn", $("[data-modal-open]"));
 
-$(".modal-open-btn").on("click", function () {
+$("[data-modal-open]").on("click", function () {
   const modalId = $(this).data("data-modal-open");
   MicroModal.show(modalId);
 });
