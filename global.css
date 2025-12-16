@@ -33,3 +33,81 @@
 .custom-check-flield input:checked ~ .custom-check-inner span{
     color: #1d1d1d;
 }
+
+/* step form partner */
+
+form#reno-form h3.title {
+    display: none;
+}
+
+.pl-step-form-container, .pl-step-form-container > div {
+    height: 100%;
+}
+
+#reno-form {
+    position: relative;
+    height: 100%;
+}
+
+#reno-form .steps {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 5;
+    transform: translateX(-50%);
+}
+
+#reno-form .steps ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0px !important;
+    padding: 20px 10px !important;
+}
+
+#reno-form .steps ul li a {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(255,255,255,0.15);
+    text-decoration: none;
+}
+
+#reno-form .steps ul li a .current-info {
+    display: none;
+}
+
+#reno-form .actions.clearfix {
+    margin-top: auto;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px 15px;
+    justify-content: space-between;
+}
+
+#reno-form .actions.clearfix ul {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#reno-form .actions.clearfix ul a {
+    text-decoration: none !important;
+    padding: 12px 20px;
+    background: white;
+    border-radius: 8px;
+    color: #1d1d1d;
+}
+
+#reno-form .actions.clearfix ul li.disabled a {
+    background: rgba(255,255,255,0.15) !important;
+    color: white;
+}
