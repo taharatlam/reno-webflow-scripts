@@ -12,7 +12,7 @@ $(function () {
     },
   });
 
-  $("#step-form").steps({
+  $("#reno-form").steps({
     headerTag: "h3",
     bodyTag: "section",
     transitionEffect: "fade",

@@ -17,3 +17,19 @@
         transform: translateY(-50%)
     }
 }
+.custom-main-input:focus ~ label {
+    transform: translateY(-130%);
+    font-size: 14px;
+}
+.custom-main-input, .custom-main-input label, .custom-check-inner{
+    transition:all 0.3s ease-in-out !important;
+}
+.custom-check-flield{
+    cursor: pointer;
+}
+.custom-check-flield input:checked ~ .custom-check-inner{
+    background: white;
+}
+.custom-check-flield input:checked ~ .custom-check-inner span{
+    color: #1d1d1d;
+}
