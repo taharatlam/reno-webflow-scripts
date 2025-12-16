@@ -318,6 +318,7 @@ function GallerySecAnimation() {
     const imagesIsInitial = gallerySec.querySelectorAll("[isInitial='true']");
     const fText = gallerySec.querySelector(".gallery-t-text-container");
     const sText = gallerySec.querySelector(".gallery-s-text-container");
+    const textarea = sText.querySelector(".gallery-f-text-area");
 
     const galTl = gsap.timeline({
       scrollTrigger: {
@@ -330,6 +331,9 @@ function GallerySecAnimation() {
     });
 
     galTl.set(sText, {
+      opacity: 0,
+    });
+    galTl.set(textarea, {
       opacity: 0,
       scale: 0.5,
     });
@@ -402,6 +406,10 @@ function GallerySecAnimation() {
       ease: "power2.out",
     });
     galTl.to(sText, {
+      opacity: 1,
+      ease: "power2.out",
+    });
+    galTl.to(textarea, {
       opacity: 1,
       scale: 1,
       ease: "power2.out",
