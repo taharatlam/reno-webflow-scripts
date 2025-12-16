@@ -45,5 +45,3 @@ function CareerSecAnimation() {
   });
 }
 CareerSecAnimation();
-
-CareerAccordionAnimation();
