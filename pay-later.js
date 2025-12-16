@@ -65,13 +65,18 @@ $("[data-modal-open]").on("click", function () {
   MicroModal.show(modalId);
 });
 
-$(".custom-main-input").on("input", function () {
-  const input = $(this);
-  const value = input.val();
-  console.log("value", value);
-  if (value.length > 0) {
-    input.addClass("has-value");
-  } else {
-    input.removeClass("has-value");
+// If input event isn't working, try using keyup, change, and paste events as well for wider compatibility.
+document.querySelectorAll(".custom-main-input").forEach(function (input) {
+  function handleInputEvent() {
+    const value = input.value;
+    console.log("value", value);
+    if (value.length > 0) {
+      input.classList.add("has-value");
+    } else {
+      input.classList.remove("has-value");
+    }
   }
+  ["keyup", "change", "paste"].forEach(function (evt) {
+    input.addEventListener(evt, handleInputEvent);
+  });
 });
