@@ -1231,3 +1231,46 @@ function initMicroModal() {
   });
 }
 initMicroModal();
+
+function ctaBannerAnimation() {
+  console.log("ctaBannerAnimation Running 11...");
+  setTimeout(() => {
+    if (typeof gsap === "undefined") {
+      console.error("GSAP or Flip plugin not loaded properly");
+      return;
+    }
+
+    const ctaBannerSec = document.querySelector("[cta-banner-sec]");
+
+    if (!ctaBannerSec) {
+      console.error(
+        "Missing cta banner section elements — check your HTML selectors."
+      );
+      return;
+    }
+
+    const textWrapper = ctaBannerSec.querySelector("[cta-text-wrapper]");
+
+    const caTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ctaBannerSec,
+        start: "top 30%",
+        end: "bottom bottom",
+        markers: true,
+        scrub: 3,
+      },
+    });
+
+    caTl.set(textWrapper, {
+      opacity: 0,
+      scale: 0.5,
+    });
+    caTl.to(textWrapper, {
+      opacity: 1,
+      scale: 1,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  }, 10);
+}
+ctaBannerAnimation();
