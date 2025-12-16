@@ -1230,3 +1230,4 @@ function initMicroModal() {
     },
   });
 }
+initMicroModal();
