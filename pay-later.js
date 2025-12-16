@@ -68,6 +68,7 @@ $("[data-modal-open]").on("click", function () {
 $(".custom-main-input").on("input", function () {
   const input = $(this);
   const value = input.val();
+  console.log("value", value);
   if (value.length > 0) {
     input.addClass("has-value");
   } else {
