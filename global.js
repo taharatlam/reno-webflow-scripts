@@ -1194,3 +1194,39 @@ function pCarouselSwiper() {
   });
 }
 pCarouselSwiper();
+
+function initMicroModal() {
+  MicroModal.init({
+    disableScroll: true,
+    awaitOpenAnimation: true,
+    awaitCloseAnimation: true,
+
+    onShow: (modal) => {
+      const container = modal.querySelector(".modal__container");
+
+      gsap.fromTo(
+        container,
+        { opacity: 0, y: 60, scale: 0.95 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.45,
+          ease: "power3.out",
+        }
+      );
+    },
+
+    onClose: (modal) => {
+      const container = modal.querySelector(".modal__container");
+
+      gsap.to(container, {
+        opacity: 0,
+        y: 60,
+        scale: 0.95,
+        duration: 0.3,
+        ease: "power3.in",
+      });
+    },
+  });
+}

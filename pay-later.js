@@ -55,3 +55,9 @@ $(document).ready(function () {
       "https://cdn.jsdelivr.net/npm/intl-tel-input@18.5.2/build/js/utils.js",
   });
 });
+
+console.log("modal", MicroModal);
+
+$(".pay-later-modal-open").on("click", function () {
+  MicroModal.show("pay-later-modal");
+});
