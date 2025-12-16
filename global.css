@@ -197,3 +197,7 @@ form#reno-form h3.title {
 .modal__container {
     position: relative;
 }
+.gallery-image-wrapper:nth-child(23) {
+    z-index: 2;
+    position: relative;
+}
