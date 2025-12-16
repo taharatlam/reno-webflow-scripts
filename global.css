@@ -105,9 +105,19 @@ form#reno-form h3.title {
     background: white;
     border-radius: 8px;
     color: #1d1d1d;
+    display: inline-block;
 }
 
 #reno-form .actions.clearfix ul li.disabled a {
     background: rgba(255,255,255,0.15) !important;
     color: white;
+}
+
+#reno-form .steps ul li a .number {
+    display: none !important;
+}
+
+#reno-form .steps ul li:not(.current) a {
+    /* background: rgba(255,255,255,0.15); */
+    opacity: 0.30;
 }
