@@ -65,7 +65,6 @@ $("[data-modal-open]").on("click", function () {
   MicroModal.show(modalId);
 });
 
-// If input event isn't working, try using keyup, change, and paste events as well for wider compatibility.
 document.querySelectorAll(".custom-main-input").forEach(function (input) {
   function handleInputEvent() {
     const value = input.value;
@@ -76,6 +75,7 @@ document.querySelectorAll(".custom-main-input").forEach(function (input) {
       input.classList.remove("has-value");
     }
   }
+  console.log("input", input);
   ["keyup", "change", "paste"].forEach(function (evt) {
     input.addEventListener(evt, handleInputEvent);
   });
