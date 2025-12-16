@@ -58,6 +58,7 @@ $(document).ready(function () {
 
 console.log("modal", MicroModal);
 
-$(".pay-later-modal-open").on("click", function () {
-  MicroModal.show("pay-later-modal");
+$("[data-modal-open]").on("click", function () {
+  const modalId = $(this).data("data-modal-open");
+  MicroModal.show(modalId);
 });
