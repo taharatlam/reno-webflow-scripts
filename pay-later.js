@@ -64,21 +64,3 @@ $("[data-modal-open]").on("click", function () {
   console.log("modalId", modalId);
   MicroModal.show(modalId);
 });
-
-document
-  .querySelectorAll(".custom-main-input:not([type='checkbox'],[type='radio'])")
-  .forEach(function (input) {
-    function handleInputEvent() {
-      const value = input.value;
-      console.log("value", value);
-      if (value.length > 0) {
-        input.classList.add("has-value");
-      } else {
-        input.classList.remove("has-value");
-      }
-    }
-    console.log("input", input);
-    ["keyup", "change", "paste"].forEach(function (evt) {
-      input.addEventListener(evt, handleInputEvent);
-    });
-  });

@@ -17,7 +17,9 @@
         transform: translateY(-50%)
     }
 }
-.custom-main-input:focus ~ label, .custom-main-input.has-value ~ label {
+.custom-main-input:focus ~ label, 
+.custom-main-input:user-valid ~ label, 
+.custom-main-input:not(:placeholder-shown) ~ label {
     transform: translateY(-130%);
     font-size: 14px;
 }
