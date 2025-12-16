@@ -17,7 +17,7 @@
         transform: translateY(-50%)
     }
 }
-.custom-main-input:focus ~ label {
+.custom-main-input:focus ~ label, .custom-main-input.has-value ~ label {
     transform: translateY(-130%);
     font-size: 14px;
 }
@@ -171,7 +171,7 @@ form#reno-form h3.title {
   }
   
   .modal__container {
-    background: #fff;
+    background: transparent;
     padding: 0px;
     max-width: 1200px;
     width: 95%;

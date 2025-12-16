@@ -64,3 +64,13 @@ $("[data-modal-open]").on("click", function () {
   console.log("modalId", modalId);
   MicroModal.show(modalId);
 });
+
+$(".custom-main-input").on("input", function () {
+  const input = $(this);
+  const value = input.val();
+  if (value.length > 0) {
+    input.addClass("has-value");
+  } else {
+    input.removeClass("has-value");
+  }
+});
