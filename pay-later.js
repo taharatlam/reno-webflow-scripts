@@ -37,3 +37,21 @@ $(function () {
     },
   });
 });
+
+$(document).ready(function () {
+  const input = document.querySelector("#country-phone");
+
+  window.iti = window.intlTelInput(input, {
+    initialCountry: "auto",
+    geoIpLookup: function (callback) {
+      $.get("https://ipinfo.io", function () {}, "jsonp").always(function (
+        resp
+      ) {
+        callback(resp && resp.country ? resp.country : "us");
+      });
+    },
+    separateDialCode: true,
+    utilsScript:
+      "https://cdn.jsdelivr.net/npm/intl-tel-input@18.5.2/build/js/utils.js",
+  });
+});
