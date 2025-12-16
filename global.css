@@ -131,3 +131,19 @@ form#reno-form h3.title {
 .custom-input label.error {
     display: none !important;
 }
+.iti__tel-input {
+    width: 100% !important;
+}
+
+.iti {
+    width: 100%;
+}
+
+.custom-input.country-phone-input .custom-label {
+    display: none !important;
+}
+.iti__dropdown-content {
+    background: #1d1d1d;
+    border-radius: 12px !important;
+    border: none !important;
+}
