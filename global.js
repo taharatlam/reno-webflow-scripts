@@ -1274,3 +1274,60 @@ function ctaBannerAnimation() {
   }, 10);
 }
 ctaBannerAnimation();
+
+function CareerAccordionAnimation() {
+  document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".v-tabs_accordion_item");
+
+    items.forEach((item, idx) => {
+      const header = item.querySelector(".v-tabs_accordion_header");
+      const body = item.querySelector(".v-tabs_accordion_body");
+
+      if (idx === 0) {
+        item.classList.add("is-opened");
+        gsap.set(body, { maxHeight: "1000px" });
+      }
+      // Initial state
+      if (item.classList.contains("is-opened")) {
+        gsap.set(body, { maxHeight: "1000px" });
+      } else {
+        gsap.set(body, { maxHeight: 0 });
+      }
+
+      header.addEventListener("click", () => {
+        const isOpen = item.classList.contains("is-opened");
+
+        // Close all others
+        items.forEach((other) => {
+          if (other !== item) {
+            other.classList.remove("is-opened");
+            gsap.to(other.querySelector(".v-tabs_accordion_body"), {
+              maxHeight: 0,
+              duration: 0.4,
+              ease: "power2.inOut",
+            });
+          }
+        });
+
+        // Toggle current
+        if (!isOpen) {
+          item.classList.add("is-opened");
+          gsap.to(body, {
+            maxHeight: "1000px",
+            duration: 0.5,
+            ease: "power2.out",
+          });
+        } else {
+          item.classList.remove("is-opened");
+          gsap.to(body, {
+            maxHeight: 0,
+            duration: 0.4,
+            ease: "power2.inOut",
+          });
+        }
+      });
+    });
+  });
+}
+
+CareerAccordionAnimation();
