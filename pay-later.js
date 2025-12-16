@@ -37,10 +37,7 @@ $(function () {
     },
   });
 });
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.5.2/build/css/intlTelInput.css"
-/>;
+
 $(document).ready(function () {
   const input = document.querySelector("#country-phone");
 
