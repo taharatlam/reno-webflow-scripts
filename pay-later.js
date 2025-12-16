@@ -60,6 +60,7 @@ console.log("modal", MicroModal);
 console.log("modal btn", $("[data-modal-open]"));
 
 $("[data-modal-open]").on("click", function () {
-  const modalId = $(this).data("data-modal-open");
+  const modalId = $(this).attr("data-modal-open");
+  console.log("modalId", modalId);
   MicroModal.show(modalId);
 });
