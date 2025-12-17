@@ -1160,15 +1160,15 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function pCarouselSwiper() {
-  console.log("pCarouselSwiper running...");
+  console.log("pCarouselSwiper new running...");
   const slider = document.querySelector("[data-portfolio-slider]");
   if (!slider) return;
 
-  const swiper = new Swiper(slider, {
+  const pCarouselSwiper = new Swiper(slider, {
     slidesPerView: 1,
     spaceBetween: 16,
     centeredSlides: true,
-    loop: true,
+    loop: false,
     navigation: {
       nextEl: slider.querySelector(".swiper-button-next"),
       prevEl: slider.querySelector(".swiper-button-prev"),
@@ -1191,6 +1191,23 @@ function pCarouselSwiper() {
         spaceBetween: 0,
       },
     },
+  });
+
+  document.querySelectorAll("[data-filter]").forEach((tab) => {
+    console.log("tab", tab);
+
+    tab.addEventListener("click", () => {
+      const filter = tab.dataset.filter;
+      console.log("filter", filter);
+
+      document.querySelectorAll(".p-carousel_slide").forEach((slide) => {
+        slide.style.display =
+          slide.dataset.category === filter ? "block" : "none";
+      });
+
+      pCarouselSwiper.update();
+      pCarouselSwiper.slideTo(0);
+    });
   });
 }
 pCarouselSwiper();
