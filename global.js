@@ -1310,7 +1310,7 @@ function ctaBannerAnimation() {
     });
   }, 10);
 }
-ctaBannerAnimation();
+// ctaBannerAnimation();
 
 function CareerAccordionAnimation() {
   document.addEventListener("DOMContentLoaded", () => {
