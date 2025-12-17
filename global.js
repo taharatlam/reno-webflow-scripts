@@ -1198,8 +1198,10 @@ function pCarouselSwiper() {
     document.querySelectorAll("[data-filter]").forEach((tab) => {
       if (tab.dataset.filter === filterValue) {
         tab.classList.add("active");
+        tab.querySelector(".form_main_radio_input").checked = true;
       } else {
         tab.classList.remove("active");
+        tab.querySelector(".form_main_radio_input").checked = false;
       }
     });
   }
