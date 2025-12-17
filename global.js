@@ -1193,21 +1193,37 @@ function pCarouselSwiper() {
     },
   });
 
-  document.querySelectorAll("[data-filter]").forEach((tab) => {
-    console.log("tab", tab);
+  // Default to "commercial" filter on load, set "active" class
+  function setActiveFilterTab(filterValue) {
+    document.querySelectorAll("[data-filter]").forEach((tab) => {
+      if (tab.dataset.filter === filterValue) {
+        tab.classList.add("active");
+      } else {
+        tab.classList.remove("active");
+      }
+    });
+  }
 
+  function filterSlides(filter) {
+    document.querySelectorAll(".p-carousal_slide").forEach((slide) => {
+      slide.style.display =
+        slide.dataset.category === filter ? "block" : "none";
+    });
+    pCarouselSwiper.update();
+    pCarouselSwiper.slideTo(0);
+  }
+
+  // On load: set "commercial" as default filter and activate tab
+  const defaultFilter = "Comercial";
+  setActiveFilterTab(defaultFilter);
+  filterSlides(defaultFilter);
+
+  // Tab click event
+  document.querySelectorAll("[data-filter]").forEach((tab) => {
     tab.addEventListener("click", () => {
       const filter = tab.dataset.filter;
-      console.log("tabfilter 1", filter);
-
-      document.querySelectorAll(".p-carousal_slide").forEach((slide) => {
-        console.log("tabfilter", filter, "card filter", slide.dataset.category);
-        slide.style.display =
-          slide.dataset.category === filter ? "block" : "none";
-      });
-
-      pCarouselSwiper.update();
-      pCarouselSwiper.slideTo(0);
+      setActiveFilterTab(filter);
+      filterSlides(filter);
     });
   });
 }
