@@ -1160,7 +1160,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function pCarouselSwiper() {
-  console.log("pCarouselSwiper new running...");
+  console.log("pCarouselSwiper new1 running...");
   const slider = document.querySelector("[data-portfolio-slider]");
   if (!slider) return;
 
@@ -1198,9 +1198,9 @@ function pCarouselSwiper() {
 
     tab.addEventListener("click", () => {
       const filter = tab.dataset.filter;
-      console.log("filter", filter);
 
       document.querySelectorAll(".p-carousel_slide").forEach((slide) => {
+        console.log("tabfilter", filter, "card filter", slide.dataset.category);
         slide.style.display =
           slide.dataset.category === filter ? "block" : "none";
       });
