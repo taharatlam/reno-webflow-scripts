@@ -1196,6 +1196,7 @@ function pCarouselSwiper() {
   // Default to "commercial" filter on load, set "active" class
   function setActiveFilterTab(filterValue) {
     document.querySelectorAll("[data-filter]").forEach((tab) => {
+      console.log("tab filter", tab);
       if (tab.dataset.filter === filterValue) {
         tab.classList.add("active");
         tab.querySelector(".form_main_radio_input").checked = true;
