@@ -1198,8 +1198,9 @@ function pCarouselSwiper() {
 
     tab.addEventListener("click", () => {
       const filter = tab.dataset.filter;
+      console.log("tabfilter 1", filter);
 
-      document.querySelectorAll(".p-carousel_slide").forEach((slide) => {
+      document.querySelectorAll(".p-carousal_slide").forEach((slide) => {
         console.log("tabfilter", filter, "card filter", slide.dataset.category);
         slide.style.display =
           slide.dataset.category === filter ? "block" : "none";
