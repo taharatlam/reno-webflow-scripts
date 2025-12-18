@@ -66,10 +66,12 @@ console.log("modal btn", $("[data-modal-open]"));
 // });
 
 document.addEventListener("DOMContentLoaded", () => {
-  initMicroModal();
-
+  // initMicroModal();
+  console.log("modal update");
   $(document).on("click", "[data-modal-open]", function () {
     const modalId = $(this).attr("data-modal-open");
-    MicroModal.show(modalId);
+    MicroModal.show(modalId, {
+      disableScroll: true,
+    });
   });
 });
