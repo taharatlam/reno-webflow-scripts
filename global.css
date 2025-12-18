@@ -261,3 +261,20 @@ form#reno-form section.current{
 .cta_visual_wrap> img{
     transition: 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
+
+.portfolio_list_img_iner> .portfolio_list_img_iner {
+    
+    transform: translateY(0);
+}
+@keyframes loopscroll{
+    0%{
+        transform: translateY(0px);
+    }
+     100%{
+        transform: translateY(-30%);
+    }
+}
+
+.two-col [data-portfolio-element=item]:hover .portfolio_list_img_iner> .portfolio_list_img_iner{
+    animation: loopscroll 3s infinite linear; 
+}
