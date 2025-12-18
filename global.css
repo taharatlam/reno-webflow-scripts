@@ -44,7 +44,7 @@ form#reno-form h3.title {
 
 form#reno-form section{
     position: absolute;
-    width: 98% !important;
+    
     display: block !important;
     visibility: hidden !important;
 }
@@ -287,6 +287,7 @@ form#reno-form section:not(.current){
     top: 2em !important;
     left: 0px !important;
     opacity: 0 !important;
+    width: 96.5% !important;
 }
 form#reno-form section{
     transition: 0.3s ease-in-out;
