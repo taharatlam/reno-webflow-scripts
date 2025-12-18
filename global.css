@@ -248,3 +248,16 @@ form#reno-form section.current{
     z-index: 3;
     overflow: unset;
 }
+
+.cta_visual_wrap> img:nth-child(2) {
+    transform: translateY(100px);
+}
+.cta_visual_wrap:hover > img:nth-child(2) {
+    transform: translateY(5px);
+}
+.cta_visual_wrap:hover > img:nth-child(1) {
+    transform: translateY(80px);
+}
+.cta_visual_wrap> img{
+    transition: 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
