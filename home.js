@@ -372,8 +372,8 @@ function GallerySecAnimation() {
     );
 
     galTl.to(animImage, {
-      width: "500px",
-      height: "300px",
+      scaleX: 15,
+      scaleY: 15,
       duration: 3.5,
       transformOrigin: "bottom right",
       ease: "power2.out",

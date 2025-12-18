@@ -241,4 +241,6 @@ form#reno-form section.current{
 
 [data-anim-img-wrapper] {
     position: relative;
+    z-index: 5;
+    overflow: unset;
 }
