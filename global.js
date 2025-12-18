@@ -993,6 +993,10 @@ document.addEventListener("DOMContentLoaded", () => {
     slideToClickedSlide: true,
   });
 
+  window.addEventListener("load", () => {
+    categorySwiper.update();
+  });
+
   console.log("Category swiper initialized:", categorySwiper);
   console.log("Category slides:", categorySwiper.slides.length);
 
