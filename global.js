@@ -1175,7 +1175,7 @@ function pCarouselSwiper() {
     slidesPerView: 1,
     spaceBetween: 16,
     centeredSlides: true,
-    initialSlide: 2,
+    initialSlide: 1,
     loop: false,
     navigation: {
       nextEl: slider.querySelector(".swiper-button-next"),
@@ -1221,7 +1221,7 @@ function pCarouselSwiper() {
         slide.dataset.category === filter ? "block" : "none";
     });
     pCarouselSwiper.update();
-    pCarouselSwiper.slideTo(2);
+    pCarouselSwiper.slideTo(1);
   }
 
   // On load: set "commercial" as default filter and activate tab
