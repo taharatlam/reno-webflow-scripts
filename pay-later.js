@@ -15,7 +15,7 @@ $(function () {
   $("#reno-form").steps({
     headerTag: "h3",
     bodyTag: "section",
-    transitionEffect: "fade",
+    // transitionEffect: "fade",
     autoFocus: true,
 
     onStepChanging: function (event, currentIndex, newIndex) {
