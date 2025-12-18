@@ -372,10 +372,17 @@ function GallerySecAnimation() {
     );
 
     galTl.to(animImage, {
-      scaleX: 1.5,
-      scaleY: 2,
+      scaleX: 2.3,
+      scaleY: 2.3,
       duration: 3.5,
       transformOrigin: "bottom right",
+      ease: "power2.out",
+    });
+    galTl.to(animImage, {
+      scaleX: 8,
+      scaleY: 8,
+      duration: 3.5,
+      transformOrigin: "center center",
       ease: "power2.out",
     });
 
