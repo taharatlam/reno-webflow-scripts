@@ -381,37 +381,34 @@ function GallerySecAnimation() {
       ease: "power2.out",
     });
 
-    console.log("animImage anim", animImage);
+    // console.log("animImage anim", animImage);
 
-    galTl.add(() => {
-      console.log("animImage anim add arr", animImage);
-      const before = animImage[0].getBoundingClientRect();
+    // galTl.add(() => {
+    //   console.log("animImage anim add arr", animImage);
+    //   const before = animImage[0].getBoundingClientRect();
 
-      // change origin (NO animation)
-      gsap.set(animImage, {
-        transformOrigin: "center center",
-      });
+    //   gsap.set(animImage, {
+    //     transformOrigin: "center center",
+    //   });
 
-      const after = animImage[0].getBoundingClientRect();
+    //   const after = animImage[0].getBoundingClientRect();
 
-      // calculate visual delta
-      const dx = before.left - after.left;
-      const dy = before.top - after.top;
+    //   const dx = before.left - after.left;
+    //   const dy = before.top - after.top;
 
-      // compensate so position stays SAME
-      gsap.set(animImage, {
-        x: `+=${dx}`,
-        y: `+=${dy}`,
-      });
-    });
+    //   gsap.set(animImage, {
+    //     x: `+=${dx}`,
+    //     y: `+=${dy}`,
+    //   });
+    // });
 
     galTl.to(animImage, {
       width: "1000px",
       height: "700px",
-      scaleX: 4,
-      scaleY: 4,
+      scaleX: 7,
+      scaleY: 7,
       duration: 3.5,
-
+      transformOrigin: "bottom right",
       ease: "power2.out",
     });
 
