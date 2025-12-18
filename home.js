@@ -376,9 +376,12 @@ function GallerySecAnimation() {
       scaleY: 2.3,
       width: "800px",
       height: "600px",
-      duration: 3.5,
+      duration: 2,
       transformOrigin: "bottom right",
       ease: "power2.out",
+    });
+    galTl.set(animImage, {
+      transformOrigin: "center center",
     });
     galTl.to(animImage, {
       width: "1000px",
@@ -386,7 +389,7 @@ function GallerySecAnimation() {
       scaleX: 4,
       scaleY: 4,
       duration: 3.5,
-      transformOrigin: "bottom right",
+
       ease: "power2.out",
     });
 
