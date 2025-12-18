@@ -43,11 +43,13 @@ form#reno-form h3.title {
 }
 
 form#reno-form section{
+    position: absolute;
     display: block !important;
     visibility: hidden !important;
 }
 form#reno-form section.current{
     visibility: visible !important;
+    position: relative;
 }
 
 .pl-step-form-container, .pl-step-form-container > div {
