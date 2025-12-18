@@ -384,15 +384,15 @@ function GallerySecAnimation() {
     console.log("animImage anim", animImage);
 
     galTl.add(() => {
-      console.log("animImage anim add", animImage);
-      const before = animImage.getBoundingClientRect();
+      console.log("animImage anim add arr", animImage);
+      const before = animImage[0].getBoundingClientRect();
 
       // change origin (NO animation)
       gsap.set(animImage, {
         transformOrigin: "center center",
       });
 
-      const after = animImage.getBoundingClientRect();
+      const after = animImage[0].getBoundingClientRect();
 
       // calculate visual delta
       const dx = before.left - after.left;
