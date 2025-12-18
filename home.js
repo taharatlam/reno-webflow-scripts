@@ -316,6 +316,9 @@ function GallerySecAnimation() {
 
     const images = gallerySec.querySelectorAll(".gallery-image-wrapper");
     const imagesIsInitial = gallerySec.querySelectorAll("[isInitial='true']");
+    const animImage = gallerySec.querySelectorAll(
+      ".main-gallery-image-wrapper-animated"
+    );
     const fText = gallerySec.querySelector(".gallery-t-text-container");
     const sText = gallerySec.querySelector(".gallery-s-text-container");
     const textarea = sText.querySelector(".gallery-f-text-area");
@@ -368,9 +371,11 @@ function GallerySecAnimation() {
       "-=0.5"
     );
 
-    galTl.to(images[22], {
-      scale: 15,
+    galTl.to(animImage, {
+      width: "500px",
+      height: "300px",
       duration: 3.5,
+      transformOrigin: "bottom right",
       ease: "power2.out",
     });
 
@@ -383,7 +388,7 @@ function GallerySecAnimation() {
       "-=0.5"
     );
     for (let i = 0; i < images.length; i++) {
-      if (i !== 22) {
+      if (i !== 20) {
         galTl.to(
           images[i],
           {
