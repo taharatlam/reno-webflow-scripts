@@ -19,21 +19,23 @@ $(function () {
     autoFocus: true,
 
     onStepChanging: function (event, currentIndex, newIndex) {
-      window.fsAttributes = window.fsAttributes || [];
-      console.log("fs attributes", window.fsAttributes);
-      window.fsAttributes.push([
-        "rangeslider",
-        (instances) => {
-          instances.forEach((instance) => instance.destroy());
-        },
-      ]);
+      console.log("change2333");
+      window.dispatchEvent(new Event("resize"));
+      // window.fsAttributes = window.fsAttributes || [];
+      // console.log("fs attributes", window.fsAttributes);
+      // window.fsAttributes.push([
+      //   "rangeslider",
+      //   (instances) => {
+      //     instances.forEach((instance) => instance.destroy());
+      //   },
+      // ]);
 
-      window.fsAttributes.push([
-        "rangeslider",
-        () => {
-          console.log("fs rangeslider reinitialized");
-        },
-      ]);
+      // window.fsAttributes.push([
+      //   "rangeslider",
+      //   () => {
+      //     console.log("fs rangeslider reinitialized");
+      //   },
+      // ]);
 
       // Always allow going back
       if (currentIndex > newIndex) return true;
