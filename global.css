@@ -281,3 +281,11 @@ form#reno-form section.current{
 .two-col .experts_list_item:hover .vertical-marquee_inner{
     animation: loopscroll 3s infinite linear; 
 }
+form#reno-form section:not(.current){
+    top: 2em !important;
+    left: 0px !important;
+    opacity: 0 !important;
+}
+form#reno-form section{
+    transition: 0.3s ease-in-out;
+}
