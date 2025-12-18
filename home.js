@@ -403,11 +403,11 @@ function GallerySecAnimation() {
     // });
 
     galTl.to(animImage, {
-      width: "100wh",
-      height: "100vh",
+      width: "1000px",
+      height: "700px",
       // y: "50%",
-      scaleX: 1,
-      scaleY: 1,
+      scaleX: 3,
+      scaleY: 3,
       duration: 0.5,
       transformOrigin: "100% 100%",
       ease: "power2.out",
