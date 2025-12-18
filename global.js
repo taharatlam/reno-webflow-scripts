@@ -1165,7 +1165,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function pCarouselSwiper() {
-  console.log("pCarouselSwiper new1 running...");
+  console.log("pCarouselSwiper new1 running change...");
   const slider = document.querySelector(
     "[data-portfolio-slider].p-carousal_wrap"
   );
@@ -1175,6 +1175,7 @@ function pCarouselSwiper() {
     slidesPerView: 1,
     spaceBetween: 16,
     centeredSlides: true,
+    initialSlide: 2,
     loop: false,
     navigation: {
       nextEl: slider.querySelector(".swiper-button-next"),
@@ -1220,7 +1221,7 @@ function pCarouselSwiper() {
         slide.dataset.category === filter ? "block" : "none";
     });
     pCarouselSwiper.update();
-    pCarouselSwiper.slideTo(0);
+    pCarouselSwiper.slideTo(2);
   }
 
   // On load: set "commercial" as default filter and activate tab
