@@ -1240,6 +1240,8 @@ function pCarouselSwiper() {
 pCarouselSwiper();
 
 function initMicroModal() {
+  console.log("initMicroModal running...", MicroModal);
+
   MicroModal.init({
     disableScroll: true,
     awaitOpenAnimation: true,
