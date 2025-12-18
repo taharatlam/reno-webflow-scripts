@@ -44,7 +44,7 @@ form#reno-form h3.title {
 
 form#reno-form section{
     position: absolute;
-    width: 100% !important;
+    width: 98% !important;
     display: block !important;
     visibility: hidden !important;
 }
