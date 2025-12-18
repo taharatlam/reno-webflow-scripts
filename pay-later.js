@@ -59,8 +59,17 @@ $(document).ready(function () {
 console.log("modal", MicroModal);
 console.log("modal btn", $("[data-modal-open]"));
 
-$("[data-modal-open]").on("click", function () {
-  const modalId = $(this).attr("data-modal-open");
+// $("[data-modal-open]").on("click", function () {
+//   const modalId = $(this).attr("data-modal-open");
+//   initMicroModal();
+//   MicroModal.show(modalId);
+// });
+
+document.addEventListener("DOMContentLoaded", () => {
   initMicroModal();
-  MicroModal.show(modalId);
+
+  $(document).on("click", "[data-modal-open]", function () {
+    const modalId = $(this).attr("data-modal-open");
+    MicroModal.show(modalId);
+  });
 });
