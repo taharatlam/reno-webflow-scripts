@@ -405,9 +405,9 @@ function GallerySecAnimation() {
     galTl.to(animImage, {
       width: "1000px",
       height: "700px",
-      y: "20%",
-      scaleX: 7,
-      scaleY: 7,
+      y: "50%",
+      scaleX: 5,
+      scaleY: 5,
       duration: 3.5,
       transformOrigin: "bottom center",
       ease: "power2.out",
