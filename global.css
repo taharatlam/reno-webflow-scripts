@@ -212,3 +212,7 @@ form#reno-form h3.title {
         transform: translateY(-50%)
     }
 }
+.swiper-slide {
+    width: fit-content;
+    flex-shrink: 0;
+  }
