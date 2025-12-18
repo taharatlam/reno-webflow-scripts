@@ -42,6 +42,14 @@ form#reno-form h3.title {
     display: none;
 }
 
+form#reno-form section{
+    display: block !important;
+    visibility: hidden !important;
+}
+form#reno-form section.current{
+    visibility: visible !important;
+}
+
 .pl-step-form-container, .pl-step-form-container > div {
     height: 100%;
 }
