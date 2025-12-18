@@ -993,9 +993,10 @@ document.addEventListener("DOMContentLoaded", () => {
     slideToClickedSlide: true,
   });
 
-  window.addEventListener("load", () => {
+  setTimeout(() => {
+    console.log("Updating category swiper");
     categorySwiper.update();
-  });
+  }, 2000);
 
   console.log("Category swiper initialized:", categorySwiper);
   console.log("Category slides:", categorySwiper.slides.length);
