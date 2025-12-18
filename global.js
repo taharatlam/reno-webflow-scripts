@@ -985,18 +985,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // --- CATEGORY THUMB SWIPER (SAME ACROSS ALL BREAKPOINTS) ---
-  // const categorySwiper = new Swiper('[data-portfolio-slider="category"]', {
-  //   slidesPerView: "auto",
-  //   spaceBetween: 30,
-  //   speed: 400,
-  //   watchSlidesProgress: true,
-  //   slideToClickedSlide: true,
-  // });
+  const categorySwiper = new Swiper('[data-portfolio-slider="category"]', {
+    slidesPerView: "auto",
+    spaceBetween: 30,
+    speed: 400,
+    watchSlidesProgress: true,
+    slideToClickedSlide: true,
+  });
 
-  // setTimeout(() => {
-  //   console.log("Updating category swiper");
-  //   categorySwiper.update();
-  // }, 2000);
+  setTimeout(() => {
+    console.log("Updating category swiper");
+    categorySwiper.update();
+  }, 2000);
 
   console.log("Category swiper initialized:", categorySwiper);
   console.log("Category slides:", categorySwiper.slides.length);
@@ -1166,7 +1166,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function pCarouselSwiper() {
   console.log("pCarouselSwiper new1 running...");
-  const slider = document.querySelector("[data-portfolio-slider]");
+  const slider = document.querySelector(
+    "[data-portfolio-slider].p-carousal_wrap"
+  );
   if (!slider) return;
 
   const pCarouselSwiper = new Swiper(slider, {
