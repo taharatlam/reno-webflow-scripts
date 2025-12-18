@@ -44,12 +44,14 @@ form#reno-form h3.title {
 
 form#reno-form section{
     position: absolute;
+    width: 100% !important;
     display: block !important;
     visibility: hidden !important;
 }
 form#reno-form section.current{
     visibility: visible !important;
     position: relative;
+    transition-delay: 0.3s !important;
 }
 
 .pl-step-form-container, .pl-step-form-container > div {
