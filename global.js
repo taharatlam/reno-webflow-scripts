@@ -1250,6 +1250,8 @@ function initMicroModal() {
     onShow: (modal) => {
       const container = modal.querySelector(".modal__container");
 
+      console.log("show container", container);
+
       gsap.fromTo(
         container,
         { opacity: 0, y: 60, scale: 0.95 },
@@ -1265,7 +1267,7 @@ function initMicroModal() {
 
     onClose: (modal) => {
       const container = modal.querySelector(".modal__container");
-
+      console.log("close container", container);
       gsap.to(container, {
         opacity: 0,
         y: 60,
