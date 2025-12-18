@@ -371,7 +371,6 @@ function GallerySecAnimation() {
       "-=0.5"
     );
 
-    const before = animImage.getBoundingClientRect();
     galTl.to(animImage, {
       scaleX: 2.3,
       scaleY: 2.3,
@@ -381,17 +380,29 @@ function GallerySecAnimation() {
       transformOrigin: "bottom right",
       ease: "power2.out",
     });
-    const after = animImage.getBoundingClientRect();
 
-    const dx = before.left - after.left;
-    const dy = before.top - after.top;
+    console.log("animImage anim", animImage);
 
-    console.log("dx", dx, before.left, after.left);
-    console.log("dy", dy, before.top, after.top);
+    galTl.add(() => {
+      console.log("animImage anim add", animImage);
+      const before = animImage.getBoundingClientRect();
 
-    galTl.set(animImage, {
-      x: `+=${dx}`,
-      y: `+=${dy}`,
+      // change origin (NO animation)
+      gsap.set(animImage, {
+        transformOrigin: "center center",
+      });
+
+      const after = animImage.getBoundingClientRect();
+
+      // calculate visual delta
+      const dx = before.left - after.left;
+      const dy = before.top - after.top;
+
+      // compensate so position stays SAME
+      gsap.set(animImage, {
+        x: `+=${dx}`,
+        y: `+=${dy}`,
+      });
     });
 
     galTl.to(animImage, {
