@@ -377,7 +377,7 @@ function GallerySecAnimation() {
       width: "800px",
       height: "600px",
       duration: 2,
-      transformOrigin: "bottom center",
+      transformOrigin: "100% 100%",
       ease: "power2.out",
     });
 
@@ -403,13 +403,13 @@ function GallerySecAnimation() {
     // });
 
     galTl.to(animImage, {
-      width: "1000px",
-      height: "700px",
+      width: "100wh",
+      height: "100vh",
       y: "50%",
-      scaleX: 5,
-      scaleY: 5,
-      duration: 3.5,
-      transformOrigin: "bottom center",
+      scaleX: 1,
+      scaleY: 1,
+      duration: 0.5,
+      transformOrigin: "100% 100%",
       ease: "power2.out",
     });
 
