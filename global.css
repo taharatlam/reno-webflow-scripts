@@ -231,6 +231,8 @@ form#reno-form section.current{
     position: absolute;
     z-index: 5;
     top: 0;
+    height: 100%;
+    
     overflow: hidden;
     border-radius: 20px;
 }
