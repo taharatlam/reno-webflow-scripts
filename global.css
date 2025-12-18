@@ -278,3 +278,6 @@ form#reno-form section.current{
 .two-col [data-portfolio-element=item]:hover .portfolio_list_img_iner> .portfolio_list_img_iner{
     animation: loopscroll 3s infinite linear; 
 }
+.two-col .experts_list_item:hover .vertical-marquee_inner{
+    animation: loopscroll 3s infinite linear; 
+}
