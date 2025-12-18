@@ -371,6 +371,7 @@ function GallerySecAnimation() {
       "-=0.5"
     );
 
+    const before = animImage.getBoundingClientRect();
     galTl.to(animImage, {
       scaleX: 2.3,
       scaleY: 2.3,
@@ -380,9 +381,19 @@ function GallerySecAnimation() {
       transformOrigin: "bottom right",
       ease: "power2.out",
     });
+    const after = animImage.getBoundingClientRect();
+
+    const dx = before.left - after.left;
+    const dy = before.top - after.top;
+
+    console.log("dx", dx, before.left, after.left);
+    console.log("dy", dy, before.top, after.top);
+
     galTl.set(animImage, {
-      transformOrigin: "center center",
+      x: `+=${dx}`,
+      y: `+=${dy}`,
     });
+
     galTl.to(animImage, {
       width: "1000px",
       height: "700px",
