@@ -372,10 +372,10 @@ function GallerySecAnimation() {
     );
 
     galTl.to(animImage, {
-      scaleX: 2.3,
-      scaleY: 2.3,
-      width: "800px",
-      height: "600px",
+      scaleX: 2,
+      scaleY: 2,
+      width: "700px",
+      height: "500px",
       duration: 2,
       transformOrigin: "100% 100%",
       ease: "power2.out",
@@ -405,7 +405,7 @@ function GallerySecAnimation() {
     galTl.to(animImage, {
       width: "100wh",
       height: "100vh",
-      y: "50%",
+      // y: "50%",
       scaleX: 1,
       scaleY: 1,
       duration: 0.5,
