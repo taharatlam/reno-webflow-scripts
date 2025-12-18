@@ -375,18 +375,20 @@ function GallerySecAnimation() {
       scaleX: 2.3,
       scaleY: 2.3,
       width: "800px",
-      height: "500px",
+      height: "600px",
       duration: 3.5,
       transformOrigin: "bottom right",
       ease: "power2.out",
     });
-    // galTl.to(animImage, {
-    //   scaleX: 8,
-    //   scaleY: 8,
-    //   duration: 3.5,
-    //   transformOrigin: "center center",
-    //   ease: "power2.out",
-    // });
+    galTl.to(animImage, {
+      width: "1000px",
+      height: "700px",
+      scaleX: 4,
+      scaleY: 4,
+      duration: 3.5,
+      transformOrigin: "center center",
+      ease: "power2.out",
+    });
 
     galTl.to(
       images[10],
