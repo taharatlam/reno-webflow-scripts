@@ -147,6 +147,8 @@ function initNavMenu() {
   let dropdownWrap = $(".nav_menu_content");
   let menuArrow = $(".nav_menu_arrow");
 
+  console.log("menuLink", menuLink);
+
   // GSAP default settings
   gsap.defaults({
     duration: 0.3,
