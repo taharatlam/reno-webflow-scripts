@@ -377,7 +377,7 @@ function GallerySecAnimation() {
       width: "700px",
       height: "500px",
       duration: 2,
-      transformOrigin: "100% 100%",
+      transformOrigin: "84% 100%",
       ease: "power2.out",
     });
 
@@ -409,7 +409,7 @@ function GallerySecAnimation() {
       scaleX: 3,
       scaleY: 3,
       duration: 0.5,
-      transformOrigin: "100% 100%",
+      transformOrigin: "84% 100%",
       ease: "power2.out",
     });
 
