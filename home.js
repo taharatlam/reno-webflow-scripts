@@ -386,7 +386,7 @@ function GallerySecAnimation() {
       scaleX: 4,
       scaleY: 4,
       duration: 3.5,
-      transformOrigin: "center center",
+      transformOrigin: "bottom right",
       ease: "power2.out",
     });
 
