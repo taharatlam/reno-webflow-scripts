@@ -298,7 +298,7 @@ function initHeroSliders() {
     });
 }
 function GallerySecAnimation() {
-  console.log("GallerySecAnimation Running 11 newww...");
+  console.log("GallerySecAnimation Running 11...");
   setTimeout(() => {
     if (typeof gsap === "undefined") {
       console.error("GSAP or Flip plugin not loaded properly");
@@ -316,148 +316,142 @@ function GallerySecAnimation() {
 
     const images = gallerySec.querySelectorAll(".gallery-image-wrapper");
     const imagesIsInitial = gallerySec.querySelectorAll("[isInitial='true']");
+    const animImage = gallerySec.querySelectorAll(
+      ".main-gallery-image-wrapper-animated"
+    );
     const fText = gallerySec.querySelector(".gallery-t-text-container");
     const sText = gallerySec.querySelector(".gallery-s-text-container");
     const textarea = sText.querySelector(".gallery-f-text-area");
-
-    // Mark dataset.index for all .main-gallery-image
-    const galleryImages = gallerySec.querySelectorAll(
-      ".gallery-grid .main-gallery-image"
-    );
-    for (let i = 0; i < galleryImages.length; i++) {
-      const image = galleryImages[i];
-      image.dataset.index = i;
-    }
-
-    // We'll use the 20th image (index 19) for the animation
-    const spanImageIndex = 19;
-    const spanImage = images[spanImageIndex];
 
     const galTl = gsap.timeline({
       scrollTrigger: {
         trigger: gallerySec,
         start: "700px 80%",
         end: "bottom bottom",
-        // markers: true, // remove markers for production
+        markers: true,
         scrub: 3,
       },
     });
 
-    // Initial states
-    galTl.set(sText, { opacity: 0 });
-    galTl.set(textarea, { opacity: 0, scale: 0.5 });
-    galTl.set(images, { opacity: 0, scale: 1, zIndex: 1 });
-    galTl.set(spanImage, { zIndex: 10 }); // bring the 20th image on top
-
-    // Fade in initial images
-    galTl.to(imagesIsInitial, {
-      opacity: 1,
-      stagger: { each: 0.1, from: "random" },
+    galTl.set(sText, {
+      opacity: 0,
+    });
+    galTl.set(textarea, {
+      opacity: 0,
+      scale: 0.5,
+    });
+    galTl.set(images, {
+      opacity: 0,
     });
 
-    // Fade out first text group
+    galTl.to(imagesIsInitial, {
+      opacity: 1,
+      stagger: {
+        each: 0.1,
+        from: "random",
+      },
+    });
+
     galTl.to(fText, {
       opacity: 0,
       scale: 0.5,
       ease: "power2.out",
     });
 
-    // Show all images in grid
     galTl.to(
       images,
       {
         opacity: 1,
         y: 0,
-        stagger: { each: 0.1, from: "random" },
+        stagger: {
+          each: 0.1,
+          from: "random",
+        },
       },
       "-=0.5"
     );
 
-    // Step 1: 20th image "spans" across grid columns/rows (looking like grid-area change)
-    galTl.to(spanImage, {
-      gridColumn: "3 / span 4", // use your own grid positions here
-      gridRow: "2 / span 2",
-      scale: 1.2,
-      boxShadow: "0 20px 60px rgba(0,0,0,0.14)",
-      zIndex: 12,
-      duration: 1,
-      ease: "power3.inOut",
-      onStart: () => {
-        // Optionally add a class to control grid-area with css for smooth transitions
-        spanImage.classList.add("span-in-grid");
-      },
+    galTl.to(animImage, {
+      scaleX: 2,
+      scaleY: 2,
+      width: "700px",
+      height: "500px",
+      duration: 2,
+      transformOrigin: "84% 100%",
+      ease: "power2.out",
     });
 
-    // Optionally, if your grid setup does not transition grid-area,
-    // you can animate size and position directly using absolute positioning
-    // or CSS transforms for more "breaking grid" effect.
+    // console.log("animImage anim", animImage);
 
-    // Step 2: the 20th image expands to cover the whole gallery/grid (full-page cover)
+    // galTl.add(() => {
+    //   console.log("animImage anim add arr", animImage);
+    //   const before = animImage[0].getBoundingClientRect();
+
+    //   gsap.set(animImage, {
+    //     transformOrigin: "center center",
+    //   });
+
+    //   const after = animImage[0].getBoundingClientRect();
+
+    //   const dx = before.left - after.left;
+    //   const dy = before.top - after.top;
+
+    //   gsap.set(animImage, {
+    //     x: `+=${dx}`,
+    //     y: `+=${dy}`,
+    //   });
+    // });
+
+    galTl.to(animImage, {
+      width: "1000px",
+      height: "700px",
+      // y: "50%",
+      scaleX: 3,
+      scaleY: 3,
+      duration: 0.5,
+      transformOrigin: "84% 100%",
+      ease: "power2.out",
+    });
+
     galTl.to(
-      spanImage,
+      images[10],
       {
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: "100vh",
-        x: 0,
-        y: 0,
-        scale: 1,
-        zIndex: 100,
-        boxShadow: "0 40px 120px rgba(0,0,0,0.22)",
-        borderRadius: "0px",
-        duration: 1.4,
-        ease: "power4.inOut",
-        onStart: () => {
-          spanImage.classList.add("full-screen-span");
-          // Optionally set body overflow hidden to lock scroll if needed
-          document.body.style.overflow = "hidden";
-        },
+        opacity: 0.9,
+        ease: "power2.out",
       },
-      "+=0.05"
+      "-=0.5"
     );
-
-    // Step 3: Fade out all other images, keep only 20th shown
     for (let i = 0; i < images.length; i++) {
-      if (i !== spanImageIndex) {
+      if (i !== 20) {
         galTl.to(
           images[i],
           {
             opacity: 0,
-            duration: 0.6,
             ease: "power2.out",
           },
-          "-=0.7"
+          "-=0.5"
         );
       }
     }
 
-    // Step 4: Fade/slide in text and textarea sequentially
-    galTl.to(
-      sText,
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 0.7,
-        ease: "power2.out",
-      },
-      "-=0.35"
-    );
-    galTl.to(
-      textarea,
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 0.7,
-        ease: "power2.out",
-      },
-      "-=0.3"
-    );
-
-    // Cleanup: restore body scroll after full animation
-    galTl.add(() => {
-      document.body.style.overflow = "";
+    galTl.to(sText, {
+      opacity: 1,
+      scale: 1,
+      ease: "power2.out",
+    });
+    galTl.to(sText, {
+      opacity: 1,
+      scale: 1,
+      ease: "power2.out",
+    });
+    galTl.to(sText, {
+      opacity: 1,
+      ease: "power2.out",
+    });
+    galTl.to(textarea, {
+      opacity: 1,
+      scale: 1,
+      ease: "power2.out",
     });
   }, 10);
 }
