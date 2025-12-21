@@ -417,18 +417,18 @@ function GallerySecAnimation() {
       ease: "power2.out",
     });
 
-    for (let i = 0; i < images.length; i++) {
-      if (i !== 20) {
-        galTl.to(
-          images[i],
-          {
-            opacity: 0,
-            ease: "power2.out",
-          },
-          "-=0.5"
-        );
-      }
-    }
+    // for (let i = 0; i < images.length; i++) {
+    //   if (i !== 20) {
+    //     galTl.to(
+    //       images[i],
+    //       {
+    //         opacity: 0,
+    //         ease: "power2.out",
+    //       },
+    //       "-=0.5"
+    //     );
+    //   }
+    // }
 
     galTl.to(sText, {
       opacity: 1,
