@@ -331,6 +331,8 @@ function GallerySecAnimation() {
     const sText = gallerySec.querySelector(".gallery-s-text-container");
     const textarea = sText.querySelector(".gallery-f-text-area");
 
+    const heroZoom = gallerySec.querySelector(".home-gallery-hero-img");
+    const heroImage = gallerySec.querySelector(".");
     const galTl = gsap.timeline({
       scrollTrigger: {
         trigger: gallerySec,
@@ -379,56 +381,40 @@ function GallerySecAnimation() {
       "-=0.5"
     );
 
+    galTl.add(() => {
+      const rect = animImage[0].getBoundingClientRect();
+      heroZoom.style.width = rect.width + "px";
+      heroZoom.style.height = rect.height + "px";
+      heroZoom.style.top = rect.top + "px";
+      heroZoom.style.left = rect.left + "px";
+      heroZoom.style.transform = "none";
+    }, 0.695);
+
+    galTl.to(
+      heroZoom,
+      {
+        opacity: 1,
+        duration: 0.005,
+      },
+      0.695
+    );
+
     galTl.to(animImage, {
-      scaleX: 2,
-      scaleY: 2,
-      width: "700px",
-      height: "500px",
+      width: "45vw",
+      height: "30vw",
       duration: 2,
       transformOrigin: "84% 100%",
       ease: "power2.out",
     });
 
-    // console.log("animImage anim", animImage);
-
-    // galTl.add(() => {
-    //   console.log("animImage anim add arr", animImage);
-    //   const before = animImage[0].getBoundingClientRect();
-
-    //   gsap.set(animImage, {
-    //     transformOrigin: "center center",
-    //   });
-
-    //   const after = animImage[0].getBoundingClientRect();
-
-    //   const dx = before.left - after.left;
-    //   const dy = before.top - after.top;
-
-    //   gsap.set(animImage, {
-    //     x: `+=${dx}`,
-    //     y: `+=${dy}`,
-    //   });
-    // });
-
     galTl.to(animImage, {
-      width: "1000px",
-      height: "700px",
-      // y: "50%",
-      scaleX: 3,
-      scaleY: 3,
+      width: "100vw",
+      height: "100vh",
       duration: 0.5,
       transformOrigin: "84% 100%",
       ease: "power2.out",
     });
 
-    galTl.to(
-      images[10],
-      {
-        opacity: 0.9,
-        ease: "power2.out",
-      },
-      "-=0.5"
-    );
     for (let i = 0; i < images.length; i++) {
       if (i !== 20) {
         galTl.to(

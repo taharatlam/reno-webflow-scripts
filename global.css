@@ -292,6 +292,9 @@ form#reno-form section:not(.current){
 form#reno-form section{
     transition: 0.3s ease-in-out;
 }
+.home-gallery-hero-img{
+    opacity: 0;
+}
 .home-gallery-hero-img img{
     width: 100% !important;
     object-fit: cover !important;
