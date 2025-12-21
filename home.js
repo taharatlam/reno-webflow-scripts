@@ -368,15 +368,22 @@ function GallerySecAnimation() {
       ease: "power2.out",
     });
 
-    galTl.to(
+    galTl.fromTo(
       images,
       {
+        opacity: 0,
+        scale: 0.5,
+        ease: "bounce",
+      },
+      {
         opacity: 1,
+        scale: 1,
         y: 0,
         stagger: {
           each: 0.1,
           from: "random",
         },
+        ease: "bounce",
       },
       "-=0.5"
     );
