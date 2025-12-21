@@ -332,7 +332,7 @@ function GallerySecAnimation() {
     const textarea = sText.querySelector(".gallery-f-text-area");
 
     const heroZoom = gallerySec.querySelector(".home-gallery-hero-img");
-    const heroImage = gallerySec.querySelector(".");
+
     const galTl = gsap.timeline({
       scrollTrigger: {
         trigger: gallerySec,
