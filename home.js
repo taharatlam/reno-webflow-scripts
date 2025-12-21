@@ -373,7 +373,7 @@ function GallerySecAnimation() {
       {
         opacity: 0,
         scale: 0.5,
-        ease: "bounce",
+        ease: "bounce.out",
       },
       {
         opacity: 1,
@@ -383,7 +383,7 @@ function GallerySecAnimation() {
           each: 0.1,
           from: "random",
         },
-        ease: "bounce",
+        ease: "bounce.out",
       },
       "-=0.5"
     );
@@ -442,13 +442,15 @@ function GallerySecAnimation() {
       scale: 1,
       ease: "power2.out",
     });
-    galTl.to(sText, {
+
+    galTl.to(textarea, {
       opacity: 1,
       scale: 1,
       ease: "power2.out",
     });
-    galTl.to(sText, {
+    galTl.to(textarea, {
       opacity: 1,
+      scale: 1,
       ease: "power2.out",
     });
     galTl.to(textarea, {
