@@ -564,11 +564,15 @@ function collabAnimation() {
       ease: "power2.out",
     });
 
-    collabTl.to(mainSlider, {
-      opacity: 1,
-      scale: 1,
-      ease: "power2.out",
-    });
+    collabTl.to(
+      mainSlider,
+      {
+        opacity: 1,
+        scale: 1,
+        ease: "power2.out",
+      },
+      "-=0.3"
+    );
     collabTl.to(mainSlider, {
       opacity: 1,
       scale: 1,
