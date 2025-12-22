@@ -521,7 +521,7 @@ function collabAnimation() {
       ".designer-pagination-slider-container"
     );
     const PaginationSliderImage = PaginationSlider.querySelectorAll(
-      ".designer-pagination-slider-container img"
+      ".designer-pagination-image"
     );
     const text = collabSec.querySelector("[data-collab-element='text']");
     const mainSlider = collabSec.querySelector(
