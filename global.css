@@ -307,7 +307,7 @@ form#reno-form section{
     opacity:1 !important;
 }
 .designer-pagination-slider-container{
-    top: 15em;
+    top: 36vh;
     left: 50%;
     transform: translateX(-50%) rotate(90deg);
     z-index: 99;
