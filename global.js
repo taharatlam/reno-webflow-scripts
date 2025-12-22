@@ -147,7 +147,7 @@ function initNavMenu() {
   let dropdownWrap = $(".nav_menu_content");
   let menuArrow = $(".nav_menu_arrow");
 
-  console.log("menuLink", menuLink);
+  console.log("menuLink start running 223...", menuLink);
 
   // GSAP default settings
   gsap.defaults({
@@ -354,7 +354,7 @@ function initVerticalTabs() {
 document.addEventListener("DOMContentLoaded", () => {
   initGenericSwipers();
   initCTASlider();
-  initHeroSliders();
+  // initHeroSliders();
   initYearSpans();
   initNavMenu();
   initScrollFadeText();
