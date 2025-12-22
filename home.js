@@ -533,7 +533,7 @@ function collabAnimation() {
         trigger: collabSec,
         start: "top 10%",
         end: "bottom bottom",
-        scrub: 3,
+        scrub: 2,
         markers: true,
       },
     });
@@ -541,17 +541,22 @@ function collabAnimation() {
     collabTl.to(text, {
       opacity: 0,
       scale: 0.5,
+      duration: 0.5,
       ease: "power2.out",
     });
 
-    collabTl.to(PaginationSlider, {
-      left: "8em",
-      top: "50%",
-      rotate: "0deg",
-      x: "0%",
-      y: "-50%",
-      ease: "power2.out",
-    });
+    collabTl.to(
+      PaginationSlider,
+      {
+        left: "8em",
+        top: "50%",
+        rotate: "0deg",
+        x: "0%",
+        y: "-50%",
+        ease: "power2.out",
+      },
+      "-=0.3"
+    );
 
     collabTl.to(PaginationSliderImage, {
       rotate: 0,
