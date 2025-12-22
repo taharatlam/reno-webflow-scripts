@@ -536,3 +536,4 @@ function collabAnimation() {
     });
   }, 10);
 }
+collabAnimation();
