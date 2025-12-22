@@ -463,18 +463,64 @@ function GallerySecAnimation() {
 
 GallerySecAnimation();
 
+// function designerSlider() {
+//   const designerMainSlider = document.querySelector("[designer-main-slider]");
+//   const designerPaginationSlider = document.querySelector(
+//     "[designer-pagination-slider]"
+//   );
+
+//   const designerPaginationSliderConfig = new Swiper(designerPaginationSlider, {
+//     direction: "vertical",
+//     slidesPerView: 4,
+//     initialSlide: 2,
+//     centeredSlides: true,
+//     spaceBetween: 20,
+//     watchSlidesProgress: true,
+//     slideToClickedSlide: true,
+//   });
+
+//   const designerMainSliderConfig = new Swiper(designerMainSlider, {
+//     slidesPerView: 1,
+//     spaceBetween: 10,
+//     effect: "fade",
+//     fadeEffect: { crossFade: true },
+
+//     thumbs: {
+//       swiper: designerPaginationSliderConfig,
+//     },
+//     on: {
+//       slideChange: function () {
+//         designerPaginationSliderConfig.slideTo(this.activeIndex);
+//       },
+//     },
+//   });
+
+//   designerPaginationSliderConfig.on("click", function () {
+//     if (this.clickedIndex !== undefined) {
+//       this.slideTo(this.clickedIndex);
+//     }
+//   });
+// }
+
+// designerSlider();
+
 function designerSlider() {
   const designerMainSlider = document.querySelector("[designer-main-slider]");
   const designerPaginationSlider = document.querySelector(
     "[designer-pagination-slider]"
   );
 
+  if (!designerMainSlider || !designerPaginationSlider) return;
+
   const designerPaginationSliderConfig = new Swiper(designerPaginationSlider, {
     direction: "vertical",
     slidesPerView: 4,
-    initialSlide: 2,
     centeredSlides: true,
     spaceBetween: 20,
+
+    loop: true,
+    loopedSlides: 6, // >= total slides
+
     watchSlidesProgress: true,
     slideToClickedSlide: true,
   });
@@ -482,25 +528,27 @@ function designerSlider() {
   const designerMainSliderConfig = new Swiper(designerMainSlider, {
     slidesPerView: 1,
     spaceBetween: 10,
+
+    loop: true,
+    loopedSlides: 6,
+
     effect: "fade",
     fadeEffect: { crossFade: true },
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false,
-    // },
+
     thumbs: {
       swiper: designerPaginationSliderConfig,
     },
+
     on: {
       slideChange: function () {
-        designerPaginationSliderConfig.slideTo(this.activeIndex);
+        designerPaginationSliderConfig.slideToLoop(this.realIndex);
       },
     },
   });
 
   designerPaginationSliderConfig.on("click", function () {
     if (this.clickedIndex !== undefined) {
-      this.slideTo(this.clickedIndex);
+      designerMainSliderConfig.slideToLoop(this.clickedIndex);
     }
   });
 }
@@ -560,6 +608,7 @@ function collabAnimation() {
 
     collabTl.to(PaginationSliderImage, {
       rotate: "0deg",
+      scale: 1,
       stagger: 0.2,
       duration: 0.2,
       ease: "power2.out",
