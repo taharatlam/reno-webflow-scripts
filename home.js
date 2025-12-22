@@ -338,7 +338,7 @@ function GallerySecAnimation() {
         trigger: gallerySec,
         start: "700px 80%",
         end: "bottom bottom",
-        markers: true,
+        markers: false,
         scrub: 3,
       },
     });
@@ -506,4 +506,32 @@ function designerSlider() {
 
 designerSlider();
 
-console.log("designerSlider Running 223...");
+function collabAnimation() {
+  console.log("collabAnimation Running 223...");
+  setTimeout(() => {
+    if (typeof gsap === "undefined") {
+      console.error("GSAP or Flip plugin not loaded properly");
+      return;
+    }
+
+    const collabSec = document.querySelector("[data-collab-anim]");
+
+    const PaginationSlider = collabSec.querySelector(
+      ".designer-pagination-slider-container"
+    );
+    const text = collabSec.querySelector("[designer-collab-element='text']");
+    const mainSlider = collabSec.querySelector(
+      "[designer-collab-element='main-slider']"
+    );
+
+    const collabTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: collabSec,
+        start: "top 80%",
+        end: "bottom bottom",
+        scrub: 3,
+        markers: true,
+      },
+    });
+  }, 10);
+}
