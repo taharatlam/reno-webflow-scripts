@@ -523,9 +523,9 @@ function collabAnimation() {
     const PaginationSliderImage = PaginationSlider.querySelectorAll(
       ".designer-pagination-slider-container img"
     );
-    const text = collabSec.querySelector("[designer-collab-element='text']");
+    const text = collabSec.querySelector("[data-collab-element='text']");
     const mainSlider = collabSec.querySelector(
-      "[designer-collab-element='main-slider']"
+      "[data-collab-element='main-slider']"
     );
 
     const collabTl = gsap.timeline({
