@@ -520,8 +520,8 @@ function collabAnimation() {
     const PaginationSlider = collabSec.querySelector(
       ".designer-pagination-slider-container"
     );
-    const PaginationSliderImage = PaginationSlider.querySelectorAll(
-      ".designer-pagination-image"
+    const PaginationSliderImage = collabSec.querySelectorAll(
+      ".designer-pagination-slider-container .designer-pagination-image"
     );
     const text = collabSec.querySelector("[data-collab-element='text']");
     const mainSlider = collabSec.querySelector(
@@ -559,11 +559,21 @@ function collabAnimation() {
     );
 
     collabTl.to(PaginationSliderImage, {
-      rotate: 0,
+      rotate: "0deg",
       stagger: 0.2,
       ease: "power2.out",
     });
 
+    collabTl.to(mainSlider, {
+      opacity: 1,
+      scale: 1,
+      ease: "power2.out",
+    });
+    collabTl.to(mainSlider, {
+      opacity: 1,
+      scale: 1,
+      ease: "power2.out",
+    });
     collabTl.to(mainSlider, {
       opacity: 1,
       scale: 1,
