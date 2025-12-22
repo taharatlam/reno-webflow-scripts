@@ -368,22 +368,16 @@ function GallerySecAnimation() {
       ease: "power2.out",
     });
 
-    galTl.fromTo(
+    galTl.to(
       images,
       {
-        opacity: 0,
-        scale: 0.5,
-        ease: "bounce.out",
-      },
-      {
         opacity: 1,
-        scale: 1,
         y: 0,
         stagger: {
           each: 0.1,
           from: "random",
         },
-        ease: "bounce.out",
+        ease: "power2.out",
       },
       "-=0.5"
     );
@@ -606,13 +600,16 @@ function collabAnimation() {
       "-=0.3"
     );
 
-    collabTl.to(PaginationSliderImage, {
-      rotate: "0deg",
-      scale: 1,
-      stagger: 0.2,
-      duration: 0.2,
-      ease: "power2.out",
-    });
+    collabTl.to(
+      PaginationSliderImage,
+      {
+        rotate: "0deg",
+        scale: 1,
+        duration: 0.2,
+        ease: "power2.out",
+      },
+      "-=0.3"
+    );
 
     collabTl.to(
       mainSlider,
@@ -621,18 +618,26 @@ function collabAnimation() {
         scale: 1,
         ease: "power2.out",
       },
-      "-=0.5"
+      "-=0.7"
     );
-    collabTl.to(mainSlider, {
-      opacity: 1,
-      scale: 1,
-      ease: "power2.out",
-    });
-    collabTl.to(mainSlider, {
-      opacity: 1,
-      scale: 1,
-      ease: "power2.out",
-    });
+    collabTl.to(
+      mainSlider,
+      {
+        opacity: 1,
+        scale: 1,
+        ease: "power2.out",
+      },
+      "-=0.3"
+    );
+    collabTl.to(
+      mainSlider,
+      {
+        opacity: 1,
+        scale: 1,
+        ease: "power2.out",
+      },
+      "-=0.3"
+    );
   }, 10);
 }
 collabAnimation();
