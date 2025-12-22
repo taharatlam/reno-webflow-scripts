@@ -528,11 +528,32 @@ function collabAnimation() {
     const collabTl = gsap.timeline({
       scrollTrigger: {
         trigger: collabSec,
-        start: "top 80%",
+        start: "top 10%",
         end: "bottom bottom",
         scrub: 3,
         markers: true,
       },
+    });
+
+    collabTl.to(text, {
+      opacity: 0,
+      scale: 0.5,
+      ease: "power2.out",
+    });
+
+    collabTl.to(PaginationSlider, {
+      left: "3em",
+      top: "50%",
+      rotate: "0deg",
+      x: "0%",
+      y: "-50%",
+      ease: "power2.out",
+    });
+
+    collabTl.to(mainSlider, {
+      opacity: 1,
+      scale: 1,
+      ease: "power2.out",
     });
   }, 10);
 }
