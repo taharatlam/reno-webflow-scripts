@@ -303,7 +303,7 @@ form#reno-form section{
 }
 
 .designer-pagination-slider-container .designer-pagination-image {
-    transform: rotate(-90deg) !important;
+    transform: rotate(-90deg);
     opacity:1 !important;
 }
 .designer-pagination-slider-container{

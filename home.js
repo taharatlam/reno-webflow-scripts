@@ -561,6 +561,7 @@ function collabAnimation() {
     collabTl.to(PaginationSliderImage, {
       rotate: "0deg",
       stagger: 0.2,
+      duration: 0.2,
       ease: "power2.out",
     });
 
@@ -571,7 +572,7 @@ function collabAnimation() {
         scale: 1,
         ease: "power2.out",
       },
-      "-=0.3"
+      "-=0.5"
     );
     collabTl.to(mainSlider, {
       opacity: 1,
