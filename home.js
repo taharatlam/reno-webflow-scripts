@@ -413,6 +413,7 @@ function GallerySecAnimation() {
     galTl.to(animImage, {
       width: "100vw",
       height: "100vh",
+      y: "-60.9715%",
       duration: 0.5,
       transformOrigin: "84% 100%",
       ease: "power2.out",
@@ -573,7 +574,7 @@ function collabAnimation() {
     const collabTl = gsap.timeline({
       scrollTrigger: {
         trigger: collabSec,
-        start: "top 10%",
+        start: "10% top",
         end: "bottom bottom",
         scrub: 2,
         markers: true,
@@ -606,9 +607,8 @@ function collabAnimation() {
         rotate: "0deg",
         scale: 1,
         duration: 0.2,
-        ease: "power2.out",
       },
-      "-=0.3"
+      "-=0.4"
     );
 
     collabTl.to(
@@ -618,7 +618,7 @@ function collabAnimation() {
         scale: 1,
         ease: "power2.out",
       },
-      "-=0.7"
+      "-=0.4"
     );
     collabTl.to(
       mainSlider,
@@ -627,7 +627,7 @@ function collabAnimation() {
         scale: 1,
         ease: "power2.out",
       },
-      "-=0.3"
+      "-=0.2"
     );
     collabTl.to(
       mainSlider,
@@ -636,7 +636,7 @@ function collabAnimation() {
         scale: 1,
         ease: "power2.out",
       },
-      "-=0.3"
+      "-=0.2"
     );
   }, 10);
 }
