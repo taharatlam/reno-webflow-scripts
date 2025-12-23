@@ -650,4 +650,9 @@ function collabAnimation() {
     );
   }, 10);
 }
-collabAnimation();
+
+const isMobile = window.innerWidth <= 768;
+
+if (!isMobile) {
+  collabAnimation();
+}
