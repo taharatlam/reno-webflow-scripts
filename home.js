@@ -412,8 +412,8 @@ function GallerySecAnimation() {
 
     galTl.to(animImage, {
       width: "100vw",
-      height: "100vh",
-      y: "-60.9715%",
+      height: "110vh",
+      y: "-54.9715%",
       duration: 0.5,
       transformOrigin: "84% 100%",
       ease: "power2.out",
@@ -618,7 +618,7 @@ function collabAnimation() {
         scale: 1,
         ease: "power2.out",
       },
-      "-=0.4"
+      "-=0.3"
     );
     collabTl.to(
       mainSlider,
