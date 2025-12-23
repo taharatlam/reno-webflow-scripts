@@ -333,6 +333,8 @@ function GallerySecAnimation() {
 
     const heroZoom = gallerySec.querySelector(".home-gallery-hero-img");
 
+    const isMobile = window.innerWidth <= 768;
+
     const galTl = gsap.timeline({
       scrollTrigger: {
         trigger: gallerySec,
@@ -400,11 +402,15 @@ function GallerySecAnimation() {
       0.695
     );
 
+    const xValue = isMobile ? "0%" : "-50.9715%";
+    const yValue = isMobile ? "-82.3026%" : "-50.9715%";
+    const widthValue = isMobile ? "100vw" : "49.981vw";
+
     galTl.to(animImage, {
-      width: "49.981vw",
+      width: widthValue,
       height: "53.9896vH",
-      x: "-50.9715%",
-      y: "-50.9715%",
+      x: xValue,
+      y: yValue,
       duration: 2,
       transformOrigin: "84% 100%",
       ease: "power2.out",
