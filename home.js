@@ -611,6 +611,10 @@ function collabAnimation() {
       "-=0.4"
     );
 
+    collabTl.add(() => {
+      PaginationSlider[0].classList.add("active");
+    });
+
     collabTl.to(
       mainSlider,
       {
