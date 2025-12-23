@@ -312,14 +312,14 @@ form#reno-form section{
     transform: translateX(-50%) rotate(90deg);
     z-index: 99;
 }
-.u-mobile-hide{
+.u-desktop-hide{
     display: none !important;
 }
 @media (max-width: 768px) {
     .u-desktop-hide{
-        display: none !important;
+        display: block !important;
     }
     .u-mobile-hide{
-        display: block !important;
+        display: none !important;
     }
 }
