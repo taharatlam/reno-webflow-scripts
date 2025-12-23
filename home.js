@@ -416,10 +416,12 @@ function GallerySecAnimation() {
       ease: "power2.out",
     });
 
+    const yValue2 = isMobile ? "-71.9715%" : "-54.9715%";
+
     galTl.to(animImage, {
       width: "100vw",
       height: "110vh",
-      y: "-54.9715%",
+      y: yValue2,
       duration: 0.5,
       transformOrigin: "84% 100%",
       ease: "power2.out",
@@ -619,6 +621,7 @@ function collabAnimation() {
 
     collabTl.add(() => {
       PaginationSlider[0].classList.add("active");
+      console.log("PaginationSlider log", PaginationSlider);
     });
 
     collabTl.to(
