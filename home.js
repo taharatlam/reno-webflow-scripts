@@ -586,6 +586,10 @@ function collabAnimation() {
         end: "bottom bottom",
         scrub: 2,
         markers: true,
+        toggleClass: {
+          targets: PaginationSlider,
+          className: "active",
+        },
       },
     });
 
@@ -605,14 +609,6 @@ function collabAnimation() {
         x: "0%",
         y: "-50%",
         ease: "power2.out",
-      },
-      "-=0.3"
-    );
-    collabTl.to(
-      PaginationSlider,
-      {
-        duration: 0.2,
-        className: "+=active",
       },
       "-=0.3"
     );
