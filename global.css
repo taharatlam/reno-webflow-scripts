@@ -323,3 +323,12 @@ form#reno-form section{
         display: none !important;
     }
 }
+
+.designer-pagination-slider-container.active .swiper-slide:not(.swiper-slide-active) {
+    opacity: 0.6;
+    transform: rotate(0) scale(0.7);
+}
+.designer-pagination-slider-container .swiper-slide{
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
