@@ -604,7 +604,16 @@ function collabAnimation() {
         rotate: "0deg",
         x: "0%",
         y: "-50%",
+        className: "+=active",
         ease: "power2.out",
+      },
+      "-=0.3"
+    );
+    collabTl.to(
+      PaginationSlider,
+      {
+        duration: 0.2,
+        className: "+=active",
       },
       "-=0.3"
     );
@@ -618,11 +627,6 @@ function collabAnimation() {
       },
       "-=0.4"
     );
-
-    collabTl.add(() => {
-      PaginationSlider[0].classList.add("active");
-      console.log("PaginationSlider log", PaginationSlider);
-    });
 
     collabTl.to(
       mainSlider,
