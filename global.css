@@ -339,4 +339,15 @@ form#reno-form section{
     .designer-slider-pagination-slider.swiper{
         height: 320px !important;
     }
+    .designer-images-marquee-container{
+        animation: loopAnimRevrse 5s infinite linear;
+    }
+}
+@keyframes loopAnimRevrse{
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-50%)
+    }
 }
