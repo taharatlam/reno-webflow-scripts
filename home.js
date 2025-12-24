@@ -604,7 +604,6 @@ function collabAnimation() {
         rotate: "0deg",
         x: "0%",
         y: "-50%",
-        className: "+=active",
         ease: "power2.out",
       },
       "-=0.3"
