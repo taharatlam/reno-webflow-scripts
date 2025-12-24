@@ -332,3 +332,11 @@ form#reno-form section{
     transition: 0.3s ease-in-out;
     cursor: pointer;
 }
+@media(max-width: 768px){
+    .designer-pagination-slider-container {
+        top: 13em  !important;
+    }
+    .designer-slider-pagination-slider.swiper{
+        height: 320px !important;
+    }
+}
