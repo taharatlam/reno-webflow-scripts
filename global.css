@@ -340,7 +340,7 @@ form#reno-form section{
         height: 320px !important;
     }
     .designer-images-marquee-container{
-        animation: loopAnimRevrse 5s infinite linear;
+        animation: loopAnimRevrse 5s infinite linear !important;
     }
 }
 @keyframes loopAnimRevrse{
