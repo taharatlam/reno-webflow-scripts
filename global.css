@@ -341,6 +341,7 @@ form#reno-form section{
     }
     .designer-images-marquee-container{
         animation: loopAnimRevrse 5s infinite linear !important;
+        min-width: max-content !important;
     }
 }
 @keyframes loopAnimRevrse{
