@@ -343,6 +343,12 @@ form#reno-form section{
         animation: loopAnimRevrse 5s infinite linear !important;
         min-width: max-content !important;
     }
+    .p-carousal_wrap {
+        padding: 0px 10px;
+    }
+    .p-carousal_slide.swiper-slide{
+        max-width: 100% !important;
+    }
 }
 @keyframes loopAnimRevrse{
     0%{
