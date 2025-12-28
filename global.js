@@ -1228,8 +1228,10 @@ function pCarouselSwiper() {
 
   // On load: set "commercial" as default filter and activate tab
   const defaultFilter = "Comercial";
-  setActiveFilterTab(defaultFilter);
-  filterSlides(defaultFilter);
+  if (!slider.getAttribute("data-no-filter")) {
+    setActiveFilterTab(defaultFilter);
+    filterSlides(defaultFilter);
+  }
 
   // Tab click event
   document.querySelectorAll("[data-filter]").forEach((tab) => {
