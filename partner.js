@@ -192,6 +192,7 @@ function calcTabs() {
             onComplete: () => {
               tab.style.display = "none";
               tab.classList.remove("active");
+              tab.style.position = "relative";
             },
           });
         } else {
@@ -208,6 +209,7 @@ function calcTabs() {
         opacity: 1,
         onStart: () => {
           content.classList.add("active");
+          content.style.position = "relative";
         },
       });
     });
