@@ -189,10 +189,13 @@ function calcTabs() {
           gsap.to(tab, {
             duration: 0.3,
             opacity: 0,
+            onStart: () => {
+              tab.style.position = "absolute";
+            },
             onComplete: () => {
               tab.style.display = "none";
               tab.classList.remove("active");
-              tab.style.position = "relative";
+              // tab.style.position = "relative";
             },
           });
         } else {
