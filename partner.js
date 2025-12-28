@@ -181,6 +181,8 @@ function calcTabs() {
       console.log("content", content);
       console.log("target", target);
 
+      console.log("tabbutton", button);
+
       // Fade out all contents
       tabsContent.forEach((tab) => {
         if (tab.classList.contains("active")) {
