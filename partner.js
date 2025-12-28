@@ -176,7 +176,7 @@ function calcTabs() {
   tabsButton.forEach((button) => {
     button.addEventListener("click", () => {
       const target = button.getAttribute("data-tab-target");
-      const content = tabsSection.querySelector(`[data-tab="${target}"]`);
+      const content = tabsSection.querySelectorAll(`[data-tab="${target}"]`);
 
       console.log("content", content);
       console.log("target", target);
@@ -206,14 +206,18 @@ function calcTabs() {
       });
 
       // Fade in the new one
-      content.style.display = "block";
-      gsap.to(content, {
-        duration: 0.4,
-        opacity: 1,
-        onStart: () => {
-          content.classList.add("active");
-          content.style.position = "relative";
-        },
+      content.forEach((tab) => {
+        tab.style.display = "block";
+      });
+      content.forEach((tab) => {
+        gsap.to(tab, {
+          duration: 0.4,
+          opacity: 1,
+          onStart: () => {
+            tab.classList.add("active");
+            tab.style.position = "relative";
+          },
+        });
       });
     });
   });
