@@ -222,9 +222,11 @@ function calcTabs() {
     });
   });
 
+  const defaultTab = "home";
+
   // Initialize: hide all tabs except the first
   tabsContent.forEach((tab, idx) => {
-    if (idx === 0) {
+    if (tab.getAttribute("data-tab") === defaultTab) {
       tab.style.display = "block";
       tab.style.opacity = 1;
       tab.classList.add("active");
