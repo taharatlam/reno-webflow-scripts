@@ -1393,15 +1393,14 @@ function contractor2Slider() {
   console.log("contractor slider", slider);
 
   const contractorSlider = new Swiper(slider, {
-    loop: false,
-    navigation: {
-      nextEl: document.querySelector(
-        ".top-contractors-slider [data-swiper-button=next] "
-      ),
-      prevEl: document.querySelector(
-        ".top-contractors-slider [data-swiper-button=prev]"
-      ),
-    },
+    // navigation: {
+    //   nextEl: document.querySelector(
+    //     ".top-contractors-slider [data-swiper-button=next] "
+    //   ),
+    //   prevEl: document.querySelector(
+    //     ".top-contractors-slider [data-swiper-button=prev]"
+    //   ),
+    // },
     pagination: {
       el: slider.querySelector(".swiper-pagination"),
       clickable: true,
