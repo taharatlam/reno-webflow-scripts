@@ -166,4 +166,60 @@ function pCarouselSwiper() {
 }
 pCarouselSwiper();
 
+function calcTabs() {
+  const tabsSection = document.querySelector("[data-calc-tab]");
+  const tabsButton = tabsSection.querySelectorAll("[data-tab-target]");
+  const tabsContent = tabsSection.querySelectorAll("[data-tab]");
+
+  console.log("tabsButton", tabsButton);
+
+  tabsButton.forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = button.dataset["tab-target"];
+      const content = tabsSection.querySelector(`[data-tab="${target}"]`);
+
+      // Fade out all contents
+      tabsContent.forEach((tab) => {
+        if (tab.classList.contains("active")) {
+          gsap.to(tab, {
+            duration: 0.3,
+            opacity: 0,
+            onComplete: () => {
+              tab.style.display = "none";
+              tab.classList.remove("active");
+            },
+          });
+        } else {
+          tab.style.display = "none";
+          tab.classList.remove("active");
+          tab.style.opacity = 0;
+        }
+      });
+
+      // Fade in the new one
+      content.style.display = "block";
+      gsap.to(content, {
+        duration: 0.4,
+        opacity: 1,
+        onStart: () => {
+          content.classList.add("active");
+        },
+      });
+    });
+  });
+
+  // Initialize: hide all tabs except the first
+  tabsContent.forEach((tab, idx) => {
+    if (idx === 0) {
+      tab.style.display = "block";
+      tab.style.opacity = 1;
+      tab.classList.add("active");
+    } else {
+      tab.style.display = "none";
+      tab.style.opacity = 0;
+      tab.classList.remove("active");
+    }
+  });
+}
+calcTabs();
 console.log("running 3");
