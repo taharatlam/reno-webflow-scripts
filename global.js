@@ -1393,15 +1393,12 @@ function contractor2Slider() {
   console.log("contractor slider", slider);
 
   const contractorSlider = new Swiper(slider, {
-    slidesPerView: 1.2,
-    spaceBetween: 16,
-    initialSlide: 1,
     loop: false,
     navigation: {
       nextEl: document.querySelector(
-        ".top-contractors-slider [data-swiper-button=next]"
+        ".top-contractors-slider [data-swiper-button=next] "
       ),
-      prevEl: slider.querySelector(
+      prevEl: document.querySelector(
         ".top-contractors-slider [data-swiper-button=prev]"
       ),
     },
@@ -1420,7 +1417,7 @@ function contractor2Slider() {
       },
       1024: {
         slidesPerView: 1.3,
-        spaceBetween: 0,
+        spaceBetween: 20,
       },
     },
   });
