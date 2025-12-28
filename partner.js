@@ -178,6 +178,9 @@ function calcTabs() {
       const target = button.dataset["tab-target"];
       const content = tabsSection.querySelector(`[data-tab="${target}"]`);
 
+      console.log("content", content);
+      console.log("target", target);
+
       // Fade out all contents
       tabsContent.forEach((tab) => {
         if (tab.classList.contains("active")) {
