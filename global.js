@@ -1228,6 +1228,7 @@ function pCarouselSwiper() {
 
   // On load: set "commercial" as default filter and activate tab
   const defaultFilter = "Comercial";
+  console.log("slider", slider, slider.getAttribute("data-no-filter"));
   if (!slider.getAttribute("data-no-filter")) {
     setActiveFilterTab(defaultFilter);
     filterSlides(defaultFilter);
