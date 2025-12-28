@@ -1385,3 +1385,43 @@ function CareerAccordionAnimation() {
 }
 
 CareerAccordionAnimation();
+
+function contractor2Slider() {
+  const slider = document.querySelector("[data-contractor-swiper]");
+  if (!slider) return;
+
+  const contractorSlider = new Swiper(slider, {
+    slidesPerView: 1.2,
+    spaceBetween: 16,
+    centeredSlides: true,
+    initialSlide: 1,
+    loop: false,
+    navigation: {
+      nextEl: document.querySelector(
+        ".top-contractors-slider [data-swiper-button=next]"
+      ),
+      prevEl: slider.querySelector(
+        ".top-contractors-slider [data-swiper-button=prev]"
+      ),
+    },
+    pagination: {
+      el: slider.querySelector(".swiper-pagination"),
+      clickable: true,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 24,
+      },
+      1024: {
+        slidesPerView: 1.3,
+        spaceBetween: 0,
+      },
+    },
+  });
+}
+contractor2Slider();
