@@ -175,7 +175,7 @@ function calcTabs() {
 
   tabsButton.forEach((button) => {
     button.addEventListener("click", () => {
-      const target = button.dataset["tab-target"];
+      const target = button.getAttribute("data-tab-target");
       const content = tabsSection.querySelector(`[data-tab="${target}"]`);
 
       console.log("content", content);
