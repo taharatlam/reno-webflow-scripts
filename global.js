@@ -1390,10 +1390,11 @@ function contractor2Slider() {
   const slider = document.querySelector("[data-contractor-swiper]");
   if (!slider) return;
 
+  console.log("contractor slider", slider);
+
   const contractorSlider = new Swiper(slider, {
     slidesPerView: 1.2,
     spaceBetween: 16,
-    centeredSlides: true,
     initialSlide: 1,
     loop: false,
     navigation: {
