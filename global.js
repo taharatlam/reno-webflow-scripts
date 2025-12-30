@@ -1452,3 +1452,27 @@ contractor2Slider();
 //   });
 // }
 // homeBottomSlider();
+
+function NavbarScroll() {
+  let lastScrollY = window.scrollY;
+  const navbar = document.querySelector(".nav_component");
+
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+
+    // scroll down → hide
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      navbar.classList.add("nav--hidden");
+      navbar.classList.remove("nav--visible");
+    }
+
+    // scroll up → show
+    if (currentScrollY < lastScrollY) {
+      navbar.classList.add("nav--visible");
+      navbar.classList.remove("nav--hidden");
+    }
+
+    lastScrollY = currentScrollY;
+  });
+}
+NavbarScroll();

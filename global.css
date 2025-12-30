@@ -361,3 +361,21 @@ form#reno-form section{
         transform: translateX(-50%)
     }
 }
+
+/* hidden state */
+.nav_component.nav--hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  
+  /* visible state */
+  .nav_component.nav--visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav_component {
+    width: 100%;
+    transition: transform 0.35s ease, opacity 0.25s ease;
+    will-change: transform;
+  }
