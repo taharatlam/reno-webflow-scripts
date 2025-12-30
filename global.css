@@ -349,6 +349,9 @@ form#reno-form section{
     .p-carousal_slide.swiper-slide{
         max-width: 100% !important;
     }
+    .designer-images-marquee-main{
+        height: auto !important;
+    }
 }
 @keyframes loopAnimRevrse{
     0%{
