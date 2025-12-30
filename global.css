@@ -363,9 +363,7 @@ form#reno-form section{
 }
 
 /* hidden state */
-.nav_component{
-    position: fixed !important;
-}
+
 .nav_component.nav--hidden {
     transform: translateY(-100%);
     opacity: 0;
@@ -376,6 +374,7 @@ form#reno-form section{
     transform: translateY(0);
     opacity: 1;
     background: black;
+    position: fixed !important;
   }
 
   .nav_component {
