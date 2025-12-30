@@ -1472,6 +1472,11 @@ function NavbarScroll() {
       navbar.classList.remove("nav--hidden");
     }
 
+    if (currentScrollY <= 300) {
+      navbar.classList.remove("nav--hidden");
+      navbar.classList.remove("nav--visible");
+    }
+
     lastScrollY = currentScrollY;
   });
 }
