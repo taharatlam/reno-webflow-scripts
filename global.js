@@ -1422,3 +1422,40 @@ function contractor2Slider() {
   });
 }
 contractor2Slider();
+
+function homeBottomSlider() {
+  const slider = document.querySelector("[data-home-started]");
+  if (!slider) return;
+
+  console.log("home bottom slider", slider);
+
+  const homeBottomSliderSwiper = new Swiper(slider, {
+    // navigation: {
+    //   nextEl: document.querySelector(
+    //     ".top-contractors-slider [data-swiper-button=next] "
+    //   ),
+    //   prevEl: document.querySelector(
+    //     ".top-contractors-slider [data-swiper-button=prev]"
+    //   ),
+    // },
+    pagination: {
+      el: slider.querySelector(".swiper-pagination"),
+      clickable: true,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 24,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
+  });
+}
+homeBottomSlider();
