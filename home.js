@@ -333,6 +333,16 @@ function GallerySecAnimation() {
 
     const heroZoom = gallerySec.querySelector(".home-gallery-hero-img");
 
+    const middleImages = [
+      images[10],
+      images[11],
+      images[12],
+      images[13],
+      images[18],
+      images[19],
+      images[21],
+    ];
+
     const isMobile = window.innerWidth <= 768;
 
     const galTl = gsap.timeline({
@@ -402,35 +412,29 @@ function GallerySecAnimation() {
       0.695
     );
 
+    galTl.to(middleImages, {
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+
     const xValue = isMobile ? "0%" : "-50.9715%";
     const yValue = isMobile ? "-82.3026%" : "-50.9715%";
     const widthValue = isMobile ? "100vw" : "49.981vw";
 
-    galTl.to(animImage, {
-      width: widthValue,
-      height: "53.9896vH",
-      x: xValue,
-      y: yValue,
-      duration: 2,
-      transformOrigin: "84% 100%",
-      ease: "power2.out",
-    });
-
-    const middleImages = [
-      images[11],
-      images[12],
-      images[13],
-      images[14],
-      images[19],
-      images[20],
-      images[21],
-      images[22],
-    ];
-
-    galTl.to(middleImages, {
-      opacity: 0,
-      ease: "power2.out",
-    });
+    galTl.to(
+      animImage,
+      {
+        width: widthValue,
+        height: "53.9896vH",
+        x: xValue,
+        y: yValue,
+        duration: 2,
+        transformOrigin: "84% 100%",
+        ease: "power2.out",
+      },
+      "-=0.5"
+    );
 
     const yValue2 = isMobile ? "-71.9715%" : "-54.9715%";
 
