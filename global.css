@@ -340,7 +340,7 @@ form#reno-form section{
         height: 320px !important;
     }
     .designer-images-marquee-container{
-        animation: loopAnimRevrse 5s infinite linear !important;
+        animation: loopAnimRevrse 15s infinite linear !important;
         min-width: max-content !important;
     }
     .p-carousal_wrap {
@@ -375,6 +375,9 @@ form#reno-form section{
     opacity: 1;
     background: black;
     position: fixed !important;
+  }
+  .nav_component.nav--visible .bottom_bottom_left_outer {
+    display: none !important;
   }
 
   .nav_component {
