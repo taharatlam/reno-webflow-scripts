@@ -392,7 +392,7 @@ function aboutTextSecAnimation() {
       trigger: aboutTextSec,
       start: "top top",
       end: "bottom bottom",
-      scrub: true,
+      scrub: 1.5,
     },
   });
 
