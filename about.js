@@ -369,6 +369,8 @@ function aboutTextSecAnimation() {
     .forEach((el) => {
       gsap.set(el, {
         opacity: 0,
+        yPercent: 50,
+        filter: "blur(10px)",
       });
     });
 
@@ -411,6 +413,8 @@ function aboutTextSecAnimation() {
     // Fade in texts
     aboutTextSecTl.to(subHeading, {
       opacity: 1,
+      yPercent: 0,
+      filter: "blur(0px)",
       duration: 0.5,
       ease: "power2.out",
     });
@@ -419,6 +423,8 @@ function aboutTextSecAnimation() {
       heading,
       {
         opacity: 1,
+        yPercent: 0,
+        filter: "blur(0px)",
         duration: 0.5,
         ease: "power2.out",
       },
