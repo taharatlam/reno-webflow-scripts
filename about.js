@@ -352,11 +352,25 @@ function aboutTextSecAnimation() {
   const aboutTextSec = document.querySelector(".multi-text-track");
   const aboutTextSecSlides = aboutTextSec.querySelectorAll(".multi-text-slide");
 
-  gsap.utils.toArray(".multi-text-slide:not(:first-child)").forEach((slide) => {
-    gsap.set(slide, {
-      opacity: 0,
+  // Set only the .multi-text-slide-bg of non-first slides to opacity 0 (not the whole slide)
+  gsap.utils
+    .toArray(".multi-text-slide:not(:first-child) .multi-text-slide-bg")
+    .forEach((bg) => {
+      gsap.set(bg, {
+        opacity: 0,
+      });
     });
-  });
+
+  // Set only the text subhead/head (not the whole slide) of non-first slides to opacity 0
+  gsap.utils
+    .toArray(
+      ".multi-text-slide:not(:first-child) .multi-text-slide-subhead, .multi-text-slide:not(:first-child) .multi-text-slide-head"
+    )
+    .forEach((el) => {
+      gsap.set(el, {
+        opacity: 0,
+      });
+    });
 
   const aboutTextSecTl = gsap.timeline({
     scrollTrigger: {
@@ -368,16 +382,20 @@ function aboutTextSecAnimation() {
   });
 
   aboutTextSecSlides.forEach((slide, i) => {
+    const bg = slide.querySelector(".multi-text-slide-bg");
     const subHeading = slide.querySelector(".multi-text-slide-subhead");
     const heading = slide.querySelector(".multi-text-slide-head");
 
-    // Fade in slide and text
-    aboutTextSecTl.to(slide, {
-      opacity: 1,
-      duration: 0.5,
-      ease: "power2.out",
-    });
+    // Fade in bg image (but never fade out)
+    if (bg) {
+      aboutTextSecTl.to(bg, {
+        opacity: 1,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    }
 
+    // Fade in texts
     aboutTextSecTl.to(subHeading, {
       opacity: 1,
       duration: 0.5,
@@ -394,7 +412,7 @@ function aboutTextSecAnimation() {
       "-=0.3"
     );
 
-    // Fade out texts and slide except for the last one
+    // Fade out texts (but NOT bg or whole slide) except for the last one
     if (i < aboutTextSecSlides.length - 1) {
       aboutTextSecTl.to([subHeading, heading], {
         opacity: 0,
@@ -402,15 +420,7 @@ function aboutTextSecAnimation() {
         stagger: 0.1,
         ease: "power2.out",
       });
-      aboutTextSecTl.to(
-        slide,
-        {
-          opacity: 0,
-          duration: 0.5,
-          ease: "power2.out",
-        },
-        "-=0.3"
-      );
     }
+    // The last slide stays visible (no fade out for bg or text)
   });
 }
