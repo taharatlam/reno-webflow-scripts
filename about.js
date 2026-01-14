@@ -415,7 +415,7 @@ function aboutTextSecAnimation() {
       opacity: 1,
       yPercent: 0,
       filter: "blur(0px)",
-      duration: 0.5,
+      duration: 1,
       ease: "power2.out",
     });
 
@@ -425,7 +425,7 @@ function aboutTextSecAnimation() {
         opacity: 1,
         yPercent: 0,
         filter: "blur(0px)",
-        duration: 0.5,
+        duration: 1,
         ease: "power2.out",
       },
       "-=0.3"
