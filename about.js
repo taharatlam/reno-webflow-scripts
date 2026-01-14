@@ -372,6 +372,19 @@ function aboutTextSecAnimation() {
       });
     });
 
+  // For the last .multi-text-slide, set .multi-text-slide-reno img and .multi-text-slide-para to opacity 0
+  const lastSlide = aboutTextSecSlides[aboutTextSecSlides.length - 1];
+  if (lastSlide) {
+    const imgReno = lastSlide.querySelector(".multi-text-slide-reno");
+    if (imgReno) {
+      gsap.set(imgReno, { opacity: 0 });
+    }
+    const para = lastSlide.querySelector(".multi-text-slide-para");
+    if (para) {
+      gsap.set(para, { opacity: 0 });
+    }
+  }
+
   const aboutTextSecTl = gsap.timeline({
     scrollTrigger: {
       trigger: aboutTextSec,
@@ -421,6 +434,39 @@ function aboutTextSecAnimation() {
         ease: "power2.out",
       });
     }
+
+    // Fade in reno img and para
+    if (i === aboutTextSecSlides.length - 1) {
+      aboutTextSecTl.to(imgReno, {
+        opacity: 1,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+      aboutTextSecTl.to(para, {
+        opacity: 1,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+      aboutTextSecTl.to(
+        para,
+        {
+          scale: 10,
+          duration: 0.5,
+          ease: "power2.out",
+        },
+        "+=0.3"
+      );
+      aboutTextSecTl.to(
+        imgReno,
+        {
+          scale: 10,
+          duration: 1.5,
+          ease: "power2.out",
+        },
+        "-=0.2"
+      );
+    }
+
     // The last slide stays visible (no fade out for bg or text)
   });
 }
