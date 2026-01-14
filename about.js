@@ -437,18 +437,20 @@ function aboutTextSecAnimation() {
 
     // Fade in reno img and para
     if (i === aboutTextSecSlides.length - 1) {
-      aboutTextSecTl.to(imgReno, {
+      const renoImg = slide.querySelector(".multi-text-slide-reno");
+      const renoPara = slide.querySelector(".multi-text-slide-para");
+      aboutTextSecTl.to(renoImg, {
         opacity: 1,
         duration: 0.5,
         ease: "power2.out",
       });
-      aboutTextSecTl.to(para, {
+      aboutTextSecTl.to(renoPara, {
         opacity: 1,
         duration: 0.5,
         ease: "power2.out",
       });
       aboutTextSecTl.to(
-        para,
+        renoPara,
         {
           scale: 10,
           duration: 0.5,
@@ -457,7 +459,7 @@ function aboutTextSecAnimation() {
         "+=0.3"
       );
       aboutTextSecTl.to(
-        imgReno,
+        renoImg,
         {
           scale: 10,
           duration: 1.5,
