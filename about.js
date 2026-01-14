@@ -342,3 +342,55 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  aboutTextSecAnimation();
+});
+
+function aboutTextSecAnimation() {
+  gsap.registerPlugin(ScrollTrigger);
+  const aboutTextSec = document.querySelector(".multi-text-track");
+  const aboutTextSecSlides = aboutTextSec.querySelectorAll(".multi-text-slide");
+
+  gsap.utils.toArray(".multi-text-slide:not(:first-child)").forEach((slide) => {
+    gsap.set(slide, {
+      opacity: 0,
+    });
+  });
+
+  const aboutTextSecTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: aboutTextSec,
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+    },
+  });
+
+  aboutTextSecSlides.forEach((slide, i) => {
+    const subHeading = slide.querySelector(".multi-text-slide-subhead");
+    const heading = slide.querySelector(".multi-text-slide-head");
+
+    aboutTextSecTl.to(slide, {
+      opacity: 1,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+
+    aboutTextSecTl.to(subHeading, {
+      opacity: 1,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+
+    aboutTextSecTl.to(
+      heading,
+      {
+        opacity: 1,
+        duration: 0.5,
+        ease: "power2.out",
+      },
+      "-=0.3"
+    );
+  });
+}
