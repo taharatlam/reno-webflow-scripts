@@ -452,7 +452,7 @@ function aboutTextSecAnimation() {
       aboutTextSecTl.to(
         renoPara,
         {
-          scale: 10,
+          opacity: 0,
           duration: 0.5,
           ease: "power2.out",
         },
@@ -463,6 +463,15 @@ function aboutTextSecAnimation() {
         {
           scale: 10,
           duration: 1.5,
+          ease: "power2.out",
+        },
+        "-=0.2"
+      );
+      aboutTextSecTl.to(
+        renoImg,
+        {
+          opacity: 0,
+          duration: 0.5,
           ease: "power2.out",
         },
         "-=0.2"
