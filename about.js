@@ -371,6 +371,7 @@ function aboutTextSecAnimation() {
     const subHeading = slide.querySelector(".multi-text-slide-subhead");
     const heading = slide.querySelector(".multi-text-slide-head");
 
+    // Fade in slide and text
     aboutTextSecTl.to(slide, {
       opacity: 1,
       duration: 0.5,
@@ -392,5 +393,24 @@ function aboutTextSecAnimation() {
       },
       "-=0.3"
     );
+
+    // Fade out texts and slide except for the last one
+    if (i < aboutTextSecSlides.length - 1) {
+      aboutTextSecTl.to([subHeading, heading], {
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: "power2.out",
+      });
+      aboutTextSecTl.to(
+        slide,
+        {
+          opacity: 0,
+          duration: 0.5,
+          ease: "power2.out",
+        },
+        "-=0.3"
+      );
+    }
   });
 }
