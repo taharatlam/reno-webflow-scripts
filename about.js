@@ -345,6 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   aboutTextSecAnimation();
+  mindSecAnimation();
 });
 
 function aboutTextSecAnimation() {
@@ -485,5 +486,57 @@ function aboutTextSecAnimation() {
     }
 
     // The last slide stays visible (no fade out for bg or text)
+  });
+}
+
+function mindSecAnimation() {
+  gsap.registerPlugin(ScrollTrigger);
+  const mindSec = document.querySelector(".about_minds_flexbox_left");
+  const mindImgs = mindSec.querySelectorAll(".about_minds_flexbox_left img");
+
+  // Set all images except the first to scale 0 and opacity 0
+  mindImgs.forEach((img, i) => {
+    if (i === 0) {
+      gsap.set(img, { scale: 1, opacity: 1 });
+    } else {
+      gsap.set(img, { scale: 0, opacity: 0 });
+    }
+  });
+
+  // Animate 2nd img
+  gsap.to(mindImgs[1], {
+    scrollTrigger: {
+      trigger: mindSec.querySelector(".about_minds_circle._2"),
+      start: "top center",
+      toggleActions: "play none none none",
+    },
+    scale: 1,
+    opacity: 1,
+    duration: 0.5,
+    ease: "power2.out",
+  });
+  // Animate 3rd img
+  gsap.to(mindImgs[2], {
+    scrollTrigger: {
+      trigger: mindSec.querySelector(".about_minds_circle._3"),
+      start: "top center",
+      toggleActions: "play none none none",
+    },
+    scale: 1,
+    opacity: 1,
+    duration: 0.5,
+    ease: "power2.out",
+  });
+  // Animate 4th img
+  gsap.to(mindImgs[3], {
+    scrollTrigger: {
+      trigger: mindSec.querySelector(".about_minds_circle._4"),
+      start: "top center",
+      toggleActions: "play none none none",
+    },
+    scale: 1,
+    opacity: 1,
+    duration: 0.5,
+    ease: "power2.out",
   });
 }
