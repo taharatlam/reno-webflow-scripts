@@ -511,12 +511,11 @@ function mindSecAnimation() {
     scrollTrigger: {
       trigger: mindSec.querySelector(".about_minds_circle._2"),
       start: "top center",
-      toggleActions: "play none none none",
+      toggleActions: "play reverse play reverse",
     },
     scale: 1,
     opacity: 1,
     duration: 0.5,
-    markers: true,
     ease: "power2.out",
   });
   // Animate 3rd img
@@ -524,12 +523,11 @@ function mindSecAnimation() {
     scrollTrigger: {
       trigger: mindSec.querySelector(".about_minds_circle._3"),
       start: "top center",
-      toggleActions: "play none none none",
+      toggleActions: "play reverse play reverse",
     },
     scale: 1,
     opacity: 1,
     duration: 0.5,
-    markers: true,
     ease: "power2.out",
   });
   // Animate 4th img
@@ -537,12 +535,11 @@ function mindSecAnimation() {
     scrollTrigger: {
       trigger: mindSec.querySelector(".about_minds_circle._4"),
       start: "top center",
-      toggleActions: "play none none none",
+      toggleActions: "play reverse play reverse",
     },
     scale: 1,
     opacity: 1,
     duration: 0.5,
-    markers: true,
     ease: "power2.out",
   });
 }
