@@ -491,7 +491,7 @@ function aboutTextSecAnimation() {
 
 function mindSecAnimation() {
   gsap.registerPlugin(ScrollTrigger);
-  const mindSec = document.querySelector(".about_minds_flexbox_left");
+  const mindSec = document.querySelector("[data-mind-sec]");
   const mindImgs = mindSec.querySelectorAll(".about_minds_flexbox_left img");
 
   console.log("mindImgs", mindImgs);
