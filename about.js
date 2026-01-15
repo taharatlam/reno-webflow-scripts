@@ -513,6 +513,7 @@ function mindSecAnimation() {
     scale: 1,
     opacity: 1,
     duration: 0.5,
+    markers: true,
     ease: "power2.out",
   });
   // Animate 3rd img
@@ -525,6 +526,7 @@ function mindSecAnimation() {
     scale: 1,
     opacity: 1,
     duration: 0.5,
+    markers: true,
     ease: "power2.out",
   });
   // Animate 4th img
@@ -537,6 +539,7 @@ function mindSecAnimation() {
     scale: 1,
     opacity: 1,
     duration: 0.5,
+    markers: true,
     ease: "power2.out",
   });
 }
