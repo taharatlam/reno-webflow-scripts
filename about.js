@@ -494,6 +494,9 @@ function mindSecAnimation() {
   const mindSec = document.querySelector(".about_minds_flexbox_left");
   const mindImgs = mindSec.querySelectorAll(".about_minds_flexbox_left img");
 
+  console.log("mindImgs", mindImgs);
+  console.log("mindSec", mindSec);
+
   // Set all images except the first to scale 0 and opacity 0
   mindImgs.forEach((img, i) => {
     if (i === 0) {
