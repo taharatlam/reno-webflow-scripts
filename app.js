@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                   ease: "power2.in",
                   duration: durationPerTransition
                 },
-                batch2StartTime + 2.2 // Start images OUT at 5.2s (Ensures everything is gone by 6.0s)
+                batch3StartTime + 2.2 // Start images OUT at 5.2s (Ensures everything is gone by 6.0s)
               );
   
         // Parallax (UNCHANGED and correct)
