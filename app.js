@@ -36,6 +36,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         gsap.set(q(".re-imagine_image-4, .re-imagine_image-5, .re-imagine_image-6, .re-imagine_image-7, .re-imagine_image-8, .re-imagine_image-9, .re-imagine_image-10, .re-imagine_image-11"), {
             scale: 0, opacity: 0
         });
+        gsap.set(".mobile-app-container .mobile_mockup_image", {
+            y: "-150px",
+            opacity: 0
+        });
+        gsap.set(".mobile-app-container .mobile_mocup_content", {
+            y: "150px",
+            opacity: 0
+        });
   
   
         const mainTL = gsap.timeline({
@@ -174,6 +182,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
           });
         });
+
+        mainTL.to(".mobile-app-container .mobile_mockup_image", {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power2.inOut"
+        });
+        mainTL.to(".mobile-app-container .mobile_mocup_content", {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power2.inOut"
+        }, "-=0.5");
+
       }
   
       /* ----------------------------------
