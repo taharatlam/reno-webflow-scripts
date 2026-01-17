@@ -42,11 +42,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
           scrollTrigger: {
             trigger: q(".tab-section_fixed_height"),
             start: "top top",
-            end: "+=500%", // Total scroll distance (5 * viewport height)
+            end: "bottom bottom",
+            // end: "+=500%",
             scrub: 0.5,
-            pin: true,
-            pinSpacing: true, 
-            invalidateOnRefresh: true
+            // pin: true,
+            // pinSpacing: true, 
+            // invalidateOnRefresh: true
           }
         });
         
