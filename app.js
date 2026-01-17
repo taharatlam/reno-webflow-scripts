@@ -201,13 +201,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
 
         mainTL.to(".mobile-app-container .mobile_mockup_image", {
-            y: 0,
+            y:"0px",
             opacity: 1,
             duration: 1,
             ease: "power2.inOut"
         });
         mainTL.to(".mobile-app-container .mobile_mocup_content", {
-            y: 0,
+            y:"0px",
             opacity: 1,
             duration: 1,
             ease: "power2.inOut"
