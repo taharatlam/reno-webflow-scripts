@@ -169,8 +169,25 @@ document.addEventListener("DOMContentLoaded", (event) => {
               duration: durationPerTransition
             },
             batch3StartTime + staggerDuration // Start images IN at 6.5s
-          );
-  
+          )
+          .to(q(".tab_imagine_content_wrapper.is-03"), {
+                yPercent: -100,
+                opacity: 0,
+                duration: durationPerTransition,
+                ease: "power2.inOut"
+            }, batch3StartTime + 2.2)
+            .to(
+                q(".re-imagine_image-8, .re-imagine_image-9, .re-imagine_image-10, .re-imagine_image-11"),
+                {
+                  scale: 3.5,
+                  opacity: 0,
+                  filter: "blur(20px)",
+                  stagger: 0.1,
+                  ease: "power2.in",
+                  duration: durationPerTransition
+                },
+                batch2StartTime + 2.2 // Start images OUT at 5.2s (Ensures everything is gone by 6.0s)
+              );
   
         // Parallax (UNCHANGED and correct)
         q(".re-imagine_image-wrap img").forEach((img, i) => {
