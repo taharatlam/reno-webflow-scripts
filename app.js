@@ -292,13 +292,13 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power2.inOut",
     });
     tabTl.to(tabMenu, {
-        scale: 1,
+        bottom: "10%",
+        yPercent: 0,
         duration: 1,
         ease: "power2.inOut",
     });
     tabTl.to(tabMenu, {
-        bottom: "10%",
-        yPercent: 0,
+        scale: 1,
         duration: 1,
         ease: "power2.inOut",
     }, "-=0.5");
