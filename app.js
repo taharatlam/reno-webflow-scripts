@@ -285,14 +285,15 @@ document.addEventListener("DOMContentLoaded", () => {
         yPercent: -50,
         duration: 1,
         ease: "power2.inOut",
-    }, "+=1");
+    });
     tabTl.to(tabMenu, {
         scale: 1.3,
         duration: 1,
         ease: "power2.inOut",
     });
+    tabTl.to({}, { duration: 1.5 });
     tabTl.to(tabMenu, {
-        bottom: "10%",
+        bottom: "5%",
         yPercent: 0,
         duration: 1,
         ease: "power2.inOut",
