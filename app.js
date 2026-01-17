@@ -179,65 +179,65 @@ document.addEventListener("DOMContentLoaded", (event) => {
         PART B: STICKY ANIMATION (UNCHANGED and correct)
       ---------------------------------- */
     if (q("[el-sticky]").length) {
-    const leftItems = q(".tabs_flexbox_left");
-    const centerItems = q(".tabs_flex_right_center_img");
-    const bgItems = q(".tabs_flex_img");
-    const triggers = q("[el-trigger]");
-  
-    // Reset
-    gsap.set(leftItems, { zIndex: 50, autoAlpha: 0, yPercent: 100 });
-    gsap.set(centerItems, { zIndex: 50, autoAlpha: 0, yPercent: 100 });
-    gsap.set(bgItems, { zIndex: 1, autoAlpha: 0, scale: 1.5 });
-  
-    if (leftItems[0]) {
-      gsap.set(leftItems[0], { autoAlpha: 1, yPercent: 0 });
-      gsap.set(centerItems[0], { autoAlpha: 1, yPercent: 0 });
-      gsap.set(bgItems[0], { autoAlpha: 1, scale: 1, zIndex: 2 });
-    }
-  
-    triggers.forEach((trigger, i) => {
-      let next = i + 1;
-      if (!leftItems[next]) return;
-  
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: trigger,
-          start: "top bottom",
-          end: "top top",
-          scrub: 0.5,
+        const leftItems = q(".tabs_flexbox_left");
+        const centerItems = q(".tabs_flex_right_center_img");
+        const bgItems = q(".tabs_flex_img");
+        const triggers = q("[el-trigger]");
+    
+        // Reset
+        gsap.set(leftItems, { zIndex: 50, autoAlpha: 0, yPercent: 100 });
+        gsap.set(centerItems, { zIndex: 50, autoAlpha: 0, yPercent: 100 });
+        gsap.set(bgItems, { zIndex: 1, autoAlpha: 0, scale: 1.5 });
+    
+        if (leftItems[0]) {
+        gsap.set(leftItems[0], { autoAlpha: 1, yPercent: 0 });
+        gsap.set(centerItems[0], { autoAlpha: 1, yPercent: 0 });
+        gsap.set(bgItems[0], { autoAlpha: 1, scale: 1, zIndex: 2 });
         }
-      });
-  
-      tl.to([leftItems[i], centerItems[i]], {
-          yPercent: -100,
-          autoAlpha: 0,
-          duration: 1,
-          ease: "power2.inOut"
-        })
-        .to([leftItems[next], centerItems[next]], {
-          yPercent: 0,
-          autoAlpha: 1,
-          duration: 1,
-          ease: "power2.inOut"
-        }, "<")
-        .fromTo(
-          bgItems[next],
-          { scale: 1.5, autoAlpha: 0, zIndex: next + 5 },
-          { scale: 1, autoAlpha: 1, duration: 1, ease: "power2.out" },
-          "<"
-        );
-    });
-  
-    // Sticky Pinning
-    ScrollTrigger.create({
-      trigger: q("[el-sticky]"),
-      start: "top top",
-      end: () => "+=" + (triggers.reduce((acc, t) => acc + t.offsetHeight, 0)),
-      pin: true,
-      pinSpacing: false,
-      anticipatePin: 1
-    });
-  }
+    
+        triggers.forEach((trigger, i) => {
+        let next = i + 1;
+        if (!leftItems[next]) return;
+    
+        let tl = gsap.timeline({
+            scrollTrigger: {
+            trigger: trigger,
+            start: "top bottom",
+            end: "top top",
+            scrub: 0.5,
+            }
+        });
+    
+        tl.to([leftItems[i], centerItems[i]], {
+            yPercent: -100,
+            autoAlpha: 0,
+            duration: 1,
+            ease: "power2.inOut"
+            })
+            .to([leftItems[next], centerItems[next]], {
+            yPercent: 0,
+            autoAlpha: 1,
+            duration: 1,
+            ease: "power2.inOut"
+            }, "<")
+            .fromTo(
+            bgItems[next],
+            { scale: 1.5, autoAlpha: 0, zIndex: next + 5 },
+            { scale: 1, autoAlpha: 1, duration: 1, ease: "power2.out" },
+            "<"
+            );
+        });
+    
+        // Sticky Pinning
+        ScrollTrigger.create({
+        trigger: q("[el-sticky]"),
+        start: "top top",
+        end: () => "+=" + (triggers.reduce((acc, t) => acc + t.offsetHeight, 0)),
+        pin: true,
+        pinSpacing: false,
+        anticipatePin: 1
+        });
+    }
   
   });
   
@@ -257,3 +257,39 @@ document.addEventListener("DOMContentLoaded", (event) => {
   
 });
   
+document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // tab timeline
+    const tabMenu = document.querySelector(".w-tab-menu");
+    const tabSpaceDiv = document.querySelector(".tab-space-div");
+    
+    const tabTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: tabSpaceDiv,
+            start: "top top",
+            end: "bottom top",
+            scrub: 0.5,
+            markers: true,
+        }
+    });
+
+    tabTl.to(tabMenu, {
+        left: "50%",
+        top: "50%",
+        bottom: "unset",
+        right: "unset",
+        yPercent: -50,
+        xPercent: -50,
+        duration: 1,
+        ease: "power2.inOut",
+    });
+    // tabTl.to(tabMenu, {
+    //     left: "50%",
+    //     xPercent: -50,
+    //     duration: 1,
+    //     ease: "power2.inOut",
+    // });
+
+    
+});
