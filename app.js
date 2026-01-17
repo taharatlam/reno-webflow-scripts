@@ -276,7 +276,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tabTl.to(tabMenu, {
         left: "50%",
+        bottom: "50%",
         xPercent: -50,
+        yPercent: -50,
         duration: 1,
         ease: "power2.inOut",
     });
