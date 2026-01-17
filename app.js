@@ -38,11 +38,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
         gsap.set(".mobile-app-container .mobile_mockup_image", {
             clearProps: "transform",
-            y: "-150px",
+            yPercent: -150,
             opacity: 0
         });
         gsap.set(".mobile-app-container .mobile_mocup_content", {
-            y: "150px",
+            yPercent: 150,
             opacity: 0
         });
   
@@ -202,13 +202,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
 
         mainTL.to(".mobile-app-container .mobile_mockup_image", {
-            y:"0px",
+            yPercent:0,
             opacity: 1,
             duration: 1,
             ease: "power2.inOut"
         });
         mainTL.to(".mobile-app-container .mobile_mocup_content", {
-            y:"0px",
+            yPercent:0,
             opacity: 1,
             duration: 1,
             ease: "power2.inOut"
