@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollTrigger: {
             trigger: tabSpaceDiv,
             start: "top bottom",
-            end: "bottom bottom",
+            end: "200% bottom",
             scrub: 0.5,
             markers: true,
         }
