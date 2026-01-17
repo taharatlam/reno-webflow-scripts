@@ -267,8 +267,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const tabTl = gsap.timeline({
         scrollTrigger: {
             trigger: tabSpaceDiv,
-            start: "top top",
-            end: "bottom top",
+            start: "top bottom",
+            end: "bottom bottom",
             scrub: 0.5,
             markers: true,
         }
