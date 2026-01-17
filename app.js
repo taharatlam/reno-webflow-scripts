@@ -286,9 +286,11 @@ document.addEventListener("DOMContentLoaded", () => {
         scale: 1.3,
         duration: 1,
         ease: "power2.inOut",
-    });
+    }, "+=2");
     tabTl.to(tabMenu, {
+        top: "auto",
         bottom: "1rem",
+        scale: 1,
         yPercent: 0,
         duration: 1,
         ease: "power2.inOut",
