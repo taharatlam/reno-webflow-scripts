@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             scale: 0, opacity: 0
         });
         gsap.set(".mobile-app-container .mobile_mockup_image", {
+            clearProps: "transform",
             y: "-150px",
             opacity: 0
         });
