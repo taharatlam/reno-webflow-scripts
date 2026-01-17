@@ -274,19 +274,41 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    tabTl.to(tabMenu, {
+    tabTl.fromTo(tabMenu, {
+        top: "auto",
+        right: "auto",
+        left: "0%",
+        xPercent: 0,
+        duration: 1,
+        ease: "power2.inOut",
+    }, {
+        top: "auto",
+        right: "auto",
         left: "50%",
-        bottom: "50%",
         xPercent: -50,
-        yPercent: -50,
         duration: 1,
         ease: "power2.inOut",
     });
+    tabTl.fromTo(tabMenu, {
+        top: "auto",
+        right: "auto",
+        bottom: "0%",
+        yPercent: 0,
+        duration: 1,
+        ease: "power2.inOut",
+    }, {
+        top: "auto",
+        right: "auto",
+        bottom: "50%",
+        yPercent: -50,
+        duration: 1,
+        ease: "power2.inOut",
+    }, "+=2");
     tabTl.to(tabMenu, {
         scale: 1.3,
         duration: 1,
         ease: "power2.inOut",
-    }, "+=2");
+    });
     tabTl.to(tabMenu, {
         top: "auto",
         bottom: "1rem",
