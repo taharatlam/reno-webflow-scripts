@@ -296,6 +296,7 @@ tabLinks.forEach(tab => {
   tab.addEventListener("click", () => {
     // Small delay to ensure Webflow's tab transition is complete before GSAP measures
     setTimeout(() => {
+      PartnerTrackAnimation();
       ScrollTrigger.refresh();
     }, 500); // Changed to 500ms for safety
   });
