@@ -369,6 +369,14 @@ function PartnerTrackAnimation() {
     const ghostLogo = partnerTrack.querySelector(".ghost-logo ");
     const colLogo = partnerTrack.querySelector(".color-logo ");
 
+
+    const partnerText = partnerTrack.querySelector(".partner-text");
+    const partnerRLogo = partnerTrack.querySelector(".partner-reno-logo-container");
+
+    const colorLogoContainer = partnerTrack.querySelector(".partner-r-container");
+    const colorLogoImg = partnerTrack.querySelector(".one_place-image");
+    const colorLogoContent = partnerTrack.querySelector(".color-logo-content");
+
     const sectionRect = stickySec.getBoundingClientRect();
     const centerX = sectionRect.width / 2;
     const centerY = sectionRect.height / 1.5;
@@ -439,6 +447,40 @@ function PartnerTrackAnimation() {
     timelineRender(1, 40);
     timelineRender(5, 30);
     timelineRender(0, 0);
+
+    tl.to(partnerText, {
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.out",
+    })
+    tl.to(partnerRLogo, {
+      yPercent: -100,
+      scale: 1.2,
+      duration: 0.5,
+      ease: "power2.out",
+    })
+    tl.to(partnerRLogo, {
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.out",
+    }, "-=0.2")
+    tl.to(colorLogoContainer, {
+      opacity: 1,
+      duration: 0.5,
+      ease: "power2.out",
+    }, "-=0.2")
+    tl.to(colorLogoImg, {
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.out",
+    }, "-=0.2")
+    tl.to(colorLogoContent, {
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.out",
+    }, "-=0.2")
+  
+
   }, 10);
 }
 PartnerTrackAnimation();
