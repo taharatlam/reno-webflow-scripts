@@ -376,11 +376,11 @@ setTimeout(() => {
     
     
       const partnerText = track.querySelector(".partner-text");
-      const partnerRLogo = partnerTrack.querySelector(".partner-reno-logo-container");
+      const partnerRLogo = track.querySelector(".partner-reno-logo-container");
     
-      const colorLogoContainer = partnerTrack.querySelector(".partner-r-container");
-      const colorLogoImg = partnerTrack.querySelector(".one_place-image");
-      const colorLogoContent = partnerTrack.querySelector(".color-logo-content");
+      const colorLogoContainer = track.querySelector(".partner-r-container");
+      const colorLogoImg = track.querySelector(".one_place-image");
+      const colorLogoContent = track.querySelector(".color-logo-content");
     
       const sectionRect = stickySec.getBoundingClientRect();
       const centerX = sectionRect.width / 2;
