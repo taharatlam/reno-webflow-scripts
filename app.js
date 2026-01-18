@@ -215,6 +215,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }, "-=0.5");
 
       }
+
+      // tab animation
+      const tabMenu = q(".w-tab-menu");
+      const tabSpaceDiv = q(".tab-space-div");
+      TabAnimation(tabMenu, tabSpaceDiv);
+
+      // partner track animation
+      PartnerTrackAnimation(q);
+
   
       /* ----------------------------------
         PART B: STICKY ANIMATION (UNCHANGED and correct)
@@ -280,14 +289,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     }
   
-    // tab animation
-    const tabMenu = q(".w-tab-menu");
-    const tabSpaceDiv = q(".tab-space-div");
-    TabAnimation(tabMenu, tabSpaceDiv);
-
-    // partner track animation
-    PartnerTrackAnimation(q);
-
+    
 
   });
   
