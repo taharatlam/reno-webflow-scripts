@@ -360,52 +360,56 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function PartnerTrackAnimation() {
-setTimeout(() => {
-  if (typeof gsap === "undefined") {
-    console.error("GSAP or Flip plugin not loaded properly");
-    return;
-  }
+  setTimeout(() => {
+    if (typeof gsap === "undefined") {
+      console.error("GSAP or Flip plugin not loaded properly");
+      return;
+    }
 
-  const partnerTrack = document.querySelectorAll("[data-partner-track]");
-  if (!partnerTrack) return;
+    const partnerTrack = document.querySelectorAll("[data-partner-track]");
+    if (!partnerTrack) return;
 
-  partnerTrack.forEach((track) => {
+    partnerTrack.forEach((track) => {
       const cards = track.querySelectorAll("img.partner-img");
       const stickySec = track.querySelector(".partners_sticky ");
       const ghostLogo = track.querySelector(".ghost-logo ");
       const colLogo = track.querySelector(".color-logo ");
-    
-    
+
       const partnerText = track.querySelector(".partner-text");
       const partnerRLogo = track.querySelector(".partner-reno-logo-container");
-    
       const colorLogoContainer = track.querySelector(".partner-r-container");
       const colorLogoImg = track.querySelector(".one_place-image");
       const colorLogoContent = track.querySelector(".color-logo-content");
-    
+
       const sectionRect = stickySec.getBoundingClientRect();
       const centerX = sectionRect.width / 2;
       const centerY = sectionRect.height / 1.5;
-    
+
+      // Store card animations here
+      const cardAnimations = [];
+
+      // Utility function to get transform values for a card
       const getXandY = (img) => {
         const rect = img.getBoundingClientRect();
-    
         const imgCenterX = rect.left + rect.width / 2 - sectionRect.left;
         const imgCenterY = rect.top + rect.height / 2 - sectionRect.top;
-    
         return { moveX: centerX - imgCenterX, moveY: centerY - imgCenterY };
       };
-    
-      const CardAnimation = (img) => {
-        return {
-          x: getXandY(img).moveX,
-          y: getXandY(img).moveY,
-          opacity: 1,
-          scale: 1,
-          duration: 2,
-        };
-      };
-    
+
+      // On first time, compute and store all card animations
+      if (cardAnimations.length === 0) {
+        cards.forEach((img) => {
+          const { moveX, moveY } = getXandY(img);
+          cardAnimations.push({
+            x: moveX,
+            y: moveY,
+            opacity: 1,
+            scale: 1,
+            duration: 2,
+          });
+        });
+      }
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: track,
@@ -415,7 +419,7 @@ setTimeout(() => {
           markers: false,
         },
       });
-    
+
       const emptyTimeline = () => {
         tl.to(colLogo, {
           opacity: 1,
@@ -423,9 +427,10 @@ setTimeout(() => {
           ease: "power2.out",
         });
       };
-    
+
       const timelineRender = (cardIndex, prcnt) => {
-        tl.to(cards[cardIndex], CardAnimation(cards[cardIndex]));
+        // Use the precomputed animation for each card
+        tl.to(cards[cardIndex], cardAnimations[cardIndex]);
         tl.to(
           cards[cardIndex],
           {
@@ -435,7 +440,7 @@ setTimeout(() => {
           },
           "-=0.2"
         );
-    
+
         tl.to(
           colLogo,
           {
@@ -446,14 +451,14 @@ setTimeout(() => {
           "-=0.4"
         );
       };
-    
+
       timelineRender(4, 80);
       timelineRender(2, 60);
       timelineRender(3, 50);
       timelineRender(1, 40);
       timelineRender(5, 30);
       timelineRender(0, 0);
-    
+
       tl.to(partnerText, {
         opacity: 0,
         duration: 0.5,
@@ -470,7 +475,7 @@ setTimeout(() => {
         duration: 0.5,
         ease: "power2.out",
       }, "-=0.2")
-    
+
       tl.to(colorLogoImg, {
         opacity: 1,
         scale: 1.5,
@@ -482,10 +487,7 @@ setTimeout(() => {
         duration: 0.5,
         ease: "power2.out",
       })
-  })
-
-  
-
-}, 10);
+    });
+  }, 10);
 }
 PartnerTrackAnimation();
