@@ -280,6 +280,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     }
   
+    // tab animation
+    const tabMenu = q(".w-tab-menu");
+    const tabSpaceDiv = q(".tab-space-div");
+    TabAnimation(tabMenu, tabSpaceDiv);
+
+    // partner track animation
+    PartnerTrackAnimation(q);
+
+
   });
   
   /* ----------------------------------
@@ -298,12 +307,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
   
 });
   
-document.addEventListener("DOMContentLoaded", () => {
+function TabAnimation(tabMenu, tabSpaceDiv) {
     gsap.registerPlugin(ScrollTrigger);
     
-    // tab timeline
-    const tabMenu = document.querySelector(".w-tab-menu");
-    const tabSpaceDiv = document.querySelector(".tab-space-div");
+  
     
     const tabTl = gsap.timeline({
         scrollTrigger: {
@@ -352,16 +359,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // });
 
     
-});
+};
 
-function PartnerTrackAnimation() {
+function PartnerTrackAnimation(q) {
   setTimeout(() => {
     if (typeof gsap === "undefined") {
       console.error("GSAP or Flip plugin not loaded properly");
       return;
     }
 
-    const partnerTrack = document.querySelector("[data-partner-track]");
+    const partnerTrack = q("[data-partner-track]");
     if (!partnerTrack) return;
 
     const cards = partnerTrack.querySelectorAll("img.partner-img");
@@ -480,4 +487,4 @@ function PartnerTrackAnimation() {
 
   }, 10);
 }
-PartnerTrackAnimation();
+// PartnerTrackAnimation();
