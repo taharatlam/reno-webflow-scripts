@@ -353,3 +353,92 @@ document.addEventListener("DOMContentLoaded", () => {
 
     
 });
+
+function PartnerTrackAnimation() {
+  setTimeout(() => {
+    if (typeof gsap === "undefined") {
+      console.error("GSAP or Flip plugin not loaded properly");
+      return;
+    }
+
+    const partnerTrack = document.querySelector("[data-partner-track]");
+    if (!partnerTrack) return;
+
+    const cards = partnerTrack.querySelectorAll("img.partner-img");
+    const stickySec = partnerTrack.querySelector(".partners_sticky ");
+    const ghostLogo = partnerTrack.querySelector(".ghost-logo ");
+    const colLogo = partnerTrack.querySelector(".color-logo ");
+
+    const sectionRect = stickySec.getBoundingClientRect();
+    const centerX = sectionRect.width / 2;
+    const centerY = sectionRect.height / 1.5;
+
+    const getXandY = (img) => {
+      const rect = img.getBoundingClientRect();
+
+      const imgCenterX = rect.left + rect.width / 2 - sectionRect.left;
+      const imgCenterY = rect.top + rect.height / 2 - sectionRect.top;
+
+      return { moveX: centerX - imgCenterX, moveY: centerY - imgCenterY };
+    };
+
+    const CardAnimation = (img) => {
+      return {
+        x: getXandY(img).moveX,
+        y: getXandY(img).moveY,
+        opacity: 1,
+        scale: 1,
+        duration: 2,
+      };
+    };
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: partnerTrack,
+        start: "700px 80%",
+        end: "bottom bottom",
+        scrub: 2,
+        markers: false,
+      },
+    });
+
+    const emptyTimeline = () => {
+      tl.to(colLogo, {
+        opacity: 1,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    };
+
+    const timelineRender = (cardIndex, prcnt) => {
+      tl.to(cards[cardIndex], CardAnimation(cards[cardIndex]));
+      tl.to(
+        cards[cardIndex],
+        {
+          opacity: 0,
+          duration: 0.5,
+          ease: "power2.out",
+        },
+        "-=0.2"
+      );
+
+      tl.to(
+        colLogo,
+        {
+          clipPath: `inset(0% ${prcnt}% 0% 0%)`,
+          duration: 1,
+          ease: "power2.out",
+        },
+        "-=0.4"
+      );
+    };
+
+    timelineRender(4, 80);
+    timelineRender(2, 60);
+    timelineRender(3, 50);
+    timelineRender(1, 40);
+    timelineRender(5, 30);
+    timelineRender(0, 0);
+  }, 10);
+}
+PartnerTrackAnimation();
