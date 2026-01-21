@@ -463,7 +463,7 @@ function aboutTextSecAnimation() {
       aboutTextSecTl.to(
         renoImg,
         {
-          width: "100vw",
+          scale: 5,
           duration: 1.5,
           ease: "power2.out",
         },
