@@ -41,6 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   );
 
+  gsap.set(".re-person-img-2,.re-person-img-3,.re-person-img-4",{
+    yPercent: 10,
+    opacity: 0,
+  })
+
   /* ----------------------------------
      MASTER TIMELINE
   ---------------------------------- */
