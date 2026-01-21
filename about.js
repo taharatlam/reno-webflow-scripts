@@ -308,16 +308,6 @@ document.addEventListener("DOMContentLoaded", () => {
     STEP * 5
   );
 
-  mainTL.to(
-    ".re-person-img-4",
-    {
-      yPercent: 0,
-      opacity: 1,
-      duration: 0.8,
-      ease: "power2.in",
-    },
-    STEP * 5
-  );
 
   mainTL.to(
     ".tab_imagine_content_wrapper.is-04",
