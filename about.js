@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
   mainTL.to(
     ".re-person-img-2",
     {
-      yPercent: 0,
+      yPercent: 10,
       opacity: 0,
       duration: 0.8,
       ease: "power2.in",
@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
   mainTL.to(
     ".re-person-img-3",
     {
-      yPercent: 0,
+      yPercent: 10,
       opacity: 0,
       duration: 0.8,
       ease: "power2.in",
@@ -329,7 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
      SUBTLE PARALLAX (SAFE)
   ---------------------------------- */
 
-  gsap.utils.toArray(".re-imagine_image-wrap img").forEach((img, i) => {
+  gsap.utils.toArray(".re-imagine_image-wrap img:not(.re-person-img)").forEach((img, i) => {
     gsap.to(img, {
       y: (i % 3) * 50,
       ease: "none",
