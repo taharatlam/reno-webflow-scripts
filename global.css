@@ -407,4 +407,22 @@ form#reno-form section{
         z-index: 4 !important;
     }
 
+    .designers_slide_img_track {
+        flex-direction: row;
+        animation: loopX 5s infinite linear !important;
+        min-width: max-content;
+    }
+    
+    .designers_slide_img_container {
+        flex-direction: row;
+    }
+    @keyframes loopX {
+        0%{
+            transform: translateX(0px);
+        }
+        100%{
+            transform: translateX(-50%);
+        }
+    }
+
 }
