@@ -1353,6 +1353,8 @@ function CareerAccordionAnimation() {
 
         console.log("isOpen", isOpen, item);
 
+        return;
+
         // Close all others
         items.forEach((other) => {
           if (other !== item) {
