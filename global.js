@@ -1351,6 +1351,8 @@ function CareerAccordionAnimation() {
       header.addEventListener("click", () => {
         const isOpen = item.classList.contains("is-opened");
 
+        console.log("isOpen", isOpen, item);
+
         // Close all others
         items.forEach((other) => {
           if (other !== item) {
