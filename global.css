@@ -393,3 +393,18 @@ form#reno-form section{
 .v-tabs_accordion_item .v-tabs_accordion_body {
     transition: 0.3s ease-in-out;
 }
+
+
+@media(max-width: 768px){
+    .nav_elements .clickable_btn {
+        background: white !important;
+        color: black !important;
+    }
+    
+    
+    .nav_elements .button_main_text {
+         color: black !important;
+        z-index: 4 !important;
+    }
+
+}
