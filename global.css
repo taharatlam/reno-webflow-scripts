@@ -385,3 +385,11 @@ form#reno-form section{
     transition: transform 0.35s ease, opacity 0.25s ease;
     will-change: transform;
   }
+
+  .v-tabs_accordion_item.is-opened .v-tabs_accordion_body {
+    max-height: 1000px !important;
+}
+
+.v-tabs_accordion_item .v-tabs_accordion_body {
+    transition: 0.3s ease-in-out;
+}
